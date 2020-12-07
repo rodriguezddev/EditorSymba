@@ -1,0 +1,168 @@
+var foto = response.data.fotos[0].s_ruta_foto;
+console.log(foto)
+
+
+				if(1 == 1){
+					console.log(foto)
+					var settings = {
+		"url": "https://southcentralus.api.cognitive.microsoft.com/vision/v2.0/analyze?visualFeatures=Tags&language=es",
+	"method": "POST",
+	"timeout": 0,
+	"headers": {
+		"Ocp-Apim-Subscription-Key": "d753583d14c74d86a5fc310cef971296",
+		"Content-Type": "application/json"
+			},
+			"data": JSON.stringify({"url":`${foto}`}),
+					};
+
+						$.ajax(settings).done(function (response) {
+								console.log(response);
+
+								var etiquetas = response.tags;
+								var etiqueta = response.tags.name;
+
+								var p0 = etiquetas[0]
+								var primero = JSON.stringify(p0.name);
+
+								var p1 = etiquetas[1]
+								var primero1 = JSON.stringify(p1.name);
+
+								var p2 = etiquetas[2]
+								var primero2 = JSON.stringify(p2.name);
+
+								var p3 = etiquetas[3]
+								var primero3 = JSON.stringify(p3.name);
+
+								var p4 = etiquetas[4]
+								var primero4 = JSON.stringify(p4.name);
+
+								var p5 = etiquetas[5]
+								var primero5 = JSON.stringify(p5.name);
+
+								var p6 = etiquetas[6]
+								var primero6 = JSON.stringify(p6.name);
+
+								var p7 = etiquetas[7]
+								var primero7 = JSON.stringify(p7.name);
+
+								var p8 = etiquetas[8]
+								var primero8 = JSON.stringify(p8.name);
+
+								var p9 = etiquetas[9]
+								var primero9 = JSON.stringify(p9.name);
+
+
+								 document.getElementById("blocktag").style.display="Inline-flex"
+
+
+									 document.getElementById("textotag").innerHTML = ` ${primero.replace(/['"]+/g, '')}`;
+									 document.getElementById("textotag1").innerHTML = ` ${primero1.replace(/['"]+/g, '')}`;
+									 document.getElementById("textotag2").innerHTML = ` ${primero2.replace(/['"]+/g, '')}`;
+									 document.getElementById("textotag3").innerHTML = ` ${primero3.replace(/['"]+/g, '')}`;
+									 document.getElementById("textotag4").innerHTML = ` ${primero4.replace(/['"]+/g, '')}`;
+									 document.getElementById("textotag5").innerHTML = ` ${primero5.replace(/['"]+/g, '')}`;
+									 document.getElementById("textotag6").innerHTML = ` ${primero6.replace(/['"]+/g, '')}`;
+									 document.getElementById("textotag7").innerHTML = ` ${primero7.replace(/['"]+/g, '')}`;
+									 document.getElementById("textotag8").innerHTML = ` ${primero8.replace(/['"]+/g, '')}`;
+									 document.getElementById("textotag9").innerHTML = ` ${primero9.replace(/['"]+/g, '')}`;
+
+
+
+
+
+
+
+
+
+						});
+				}
+
+
+				if(response.data.fotos[0].s_ruta_foto == "http://test.pruebape.hol.es/img/not-found.png"){
+					$('#myModal').modal('show');
+					document.getElementById("blur").style.filter = " blur(3px)"
+					document.getElementById("oscuridad").style.filter = " brightness(0.8)"
+					var nombrepro = response.data.s_descripcion;
+					var nombrepro2 = nombrepro.slice(0, -10);
+					var settings = {
+				"url": `https://api.cognitive.microsoft.com/bing/v7.0/images/search?q=${nombrepro2}`,
+				"method": "GET",
+				"timeout": 0,
+				"headers": {
+					"Ocp-Apim-Subscription-Key": "1a716cdb234b442e82043a00ae5331d2",
+					"Content-Type": "application/json"
+				},
+				};
+
+				console.loG("hasta aca todo bono")
+				$.ajax(settings).done(function (response) {
+
+				console.log(response)
+				console.log("un error")
+				var link = response.value[0].contentUrl;
+				var imprimir = JSON.stringify(link);
+
+				var link2 = response.value[1].contentUrl;
+				var imprimir2 = JSON.stringify(link2);
+
+
+
+				var link4 = response.value[3].contentUrl;
+				var imprimir4 = JSON.stringify(link4);
+
+				var link5 = response.value[4].contentUrl;
+				var imprimir5 = JSON.stringify(link5);
+
+				var link6 = response.value[5].contentUrl;
+				var imprimir6 = JSON.stringify(link6);
+
+				document.getElementById("img1").src = ` ${imprimir.replace(/['"]+/g, '')}`;
+				document.getElementById("img2").src = ` ${imprimir2.replace(/['"]+/g, '')}`;
+				document.getElementById("img3").src = ` ${imprimir3.replace(/['"]+/g, '')}`;
+				document.getElementById("img4").src = ` ${imprimir4.replace(/['"]+/g, '')}`;
+				document.getElementById("img5").src = ` ${imprimir5.replace(/['"]+/g, '')}`;
+				document.getElementById("img6").src = ` ${imprimir6.replace(/['"]+/g, '')}`;
+
+
+
+				});
+
+
+
+
+
+				};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+				           document.getElementById("blocktag").style.display="Inline-flex"
+
+
+				             document.getElementById("textotag").innerHTML = ` ${primero.replace(/['"]+/g, '')}`;
+				             document.getElementById("textotag1").innerHTML = ` ${primero1.replace(/['"]+/g, '')}`;
+				             document.getElementById("textotag2").innerHTML = ` ${primero2.replace(/['"]+/g, '')}`;
+				             document.getElementById("textotag3").innerHTML = ` ${primero3.replace(/['"]+/g, '')}`;
+				             document.getElementById("textotag4").innerHTML = ` ${primero4.replace(/['"]+/g, '')}`;
+				             document.getElementById("textotag5").innerHTML = ` ${primero5.replace(/['"]+/g, '')}`;
+				             document.getElementById("textotag6").innerHTML = ` ${primero6.replace(/['"]+/g, '')}`;
+				             document.getElementById("textotag7").innerHTML = ` ${primero7.replace(/['"]+/g, '')}`;
+				             document.getElementById("textotag8").innerHTML = ` ${primero8.replace(/['"]+/g, '')}`;

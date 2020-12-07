@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="zxx">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="description" content="Ogani Template">
+        <meta name="keywords" content="Ogani, unica, creative, html">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Ogani | Template</title>
+        <!-- Google Font -->
+        <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;600;900&display=swap" rel="stylesheet">
+        <!-- Css Styles -->
+        <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
+        <link rel="stylesheet" href="css/nice-select.css" type="text/css">
+        <link rel="stylesheet" href="css/jquery-ui.min.css" type="text/css">
+        <link rel="stylesheet" href="css/owl.carousel.min.css" type="text/css">
+        <link rel="stylesheet" href="css/slicknav.min.css" type="text/css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css">
+        <link rel="stylesheet" href="css/style.css" type="text/css">
+        
+        <style>
+            .bordes{
+                border-left:1px solid blue;
+            }
+        </style>
+    </head>
+    <h1 id="aparece" style="display:none">En celular no puede crear su página :/ si desea ver como queda ingrese a su tienda virtual desde un celular</h1>
+    <body style="overflow:hidden;" >
+        <div id="appEdit" style="height: 100%;">
+            <div style="width:100%; height:4rem; display:flex; align-items:center; justify-content:space-between; padding-left: 3rem; padding-right: 1rem; -webkit-box-shadow: 0px 1px 14px -8px rgba(126,126,126,1); -moz-box-shadow: 0px 1px 14px -8px rgba(126,126,126,1); box-shadow: 0px 1px 14px -8px rgba(126,126,126,1); position: fixed; z-index: 1; top:0;  background: #fff;">
+                    <div style="display:flex; align-items:center; padding-right: 1rem;">
+                        <div style="display:flex;  align-items:center; ">
+                            <div style="display:flex; flex-direction:column; align-items:flex-end; justify-content:center;">
+                                <h1 class="h1" style="font-family: galano; margin: 0px 0px 7px 0rem;font-size: 33px;">Symba</h1>
+                                <p style="font-family: helvetica; margin: -5px 0px 7px 2.5rem; font-size: 12px;">E-commerce</p>
+                            </div>
+                            <div style="margin-left: 0.5rem;">
+                                <div style="width:5px; height:5px; background: #1D5AF5; border-radius:100px;"></div>
+                                <div style="width:15px; height:15px; background: rgba(29, 90, 245, 0.21); border-radius:100px;     margin-left: 0.3rem;"></div>
+                                <div style="width:15px; height:15px;background: #1D5AF5; margin-top:-5px; border-radius:100px;"></div>
+                            </div>
+                        </div>
+                        <div style="padding-left: 2rem; margin-right: 2rem; display:flex;  align-items:center; margin-left: 1rem;">
+                            <div>
+                                <span class="iconify" style="font-size: 16px;  color:#7e7e7e" data-icon="oi:magnifying-glass" data-inline="false"></span>
+                            </div>
+                            <div class="mt-2">
+                                <vs-input style="width:300px;" placeholder="Buscar Proveedores" />
+                            </div>
+            
+                        </div>
+            
+                        <div style="display:flex; align-items: center; cursor:pointer">
+                            <img src="SVG NO EMBEBIDO/flecha1.svg" style="margin-right:1rem; width:20px" alt="">
+                            <img src="SVG NO EMBEBIDO/flecha2.svg" style="width:20px" alt="">
+                        </div>
+                    </div>
+                    <div style="width: 150px;">
+                        <p style="margin:0; font-family: galano; text-align: center; color:blue; border-radius: 8px;  background: rgba(0, 56, 255, 0.07);   width: 90px; height: 2rem;">Activo</p>
+                    </div>
+                </div>
+                <div  style="position:fixed; width:22%; background:#fff;  padding-left: 1rem;   margin-top: 1rem; left:0; height:100vh;">
+                        <div style="display:flex; flex-direction:column;">
+                            <h1 class="h1" style="font-family: galano;    margin: 0px 0px 3px 0rem; font-size: 18px;">Página inicial</h1>
+                            <p style="font-family: helvetica; margin: 0rem; font-size: 12px;">Secciones</p>
+                        </div>
+
+                        <div class="soloAqui" style="margin-top:3rem;" id="mover" >
+                            <div  class="cambio" v-for="item in options" v-on:drag="sortable(), movi(item)" @mousedown="obtener(item), unaVez(item)" v-on:drop="enviar()"  style="display:flex; justify-content: space-between; background:#fff; margin: 0.5rem 0px; padding: 0.5rem;  box-shadow: 0px 1px 14px -8px rgba(126,126,126,1);">
+                                <div style="display:flex; align-items: center;"  v-on:change="movi(item)">
+                                    <img :src="item.img" style="width: 25px; margin-right: 1rem;" alt="">
+                                    <p style="font-family: helvetica; margin: 0rem; font-size: 15px;">{{item.name}}</p>
+                                </div>
+                                <div style="display:flex; align-items: center;">
+                                    <img src="SVG NO EMBEBIDO/visible 3.svg" style="width: 25px; margin-right: 1rem;" alt="">
+                                    <img src="SVG NO EMBEBIDO/circulos.png" style="width:20px" alt="">
+                                </div>
+                            </div>
+                        </div>
+                            <div style="display:flex; justify-content: center; background:#fff; align-items:center; margin: 0.5rem 0px; padding: 0.5rem; ">
+                                <img src="SVG NO EMBEBIDO/plus.svg" style="width: 25px; margin-right: 1rem;" alt="">
+                                <p style="font-family: helvetica; margin: 0rem; font-size: 17px;">Crear nueva sección</p>
+                            </div>
+                        
+                    </div>
+        <div style="width:100%; height:90%; display:flex; justify-content:flex-end; margin-top:3rem;">
+            <iframe  frameborder="0" id="my-iframe" style="width: 78%;  margin-top: 2rem;   height: 99%; border: none;" class="aaa" src="plantillas/plantillaDosL.html"></iframe>
+        </div>
+    </div>
+        <!-- Footer Section End -->
+        <!-- Js Plugins -->
+        <style media="screen">@media (max-width: 767px) { .desaparecer {  display: none; }  #aparece {  display: inline !important; } } #slider:hover { overflow: visible !important; margin-top: 10px !important; } .editable, .pg-node-id-1, .pg-file-cs-119 { transition: 0.3s; } .editabletexto, .pg-node-id-2, .pg-file-cs-119 { transition: 0.3s; } .editable:hover, editable.pg-state-hover, .pg-node-id-3, .pg-file-cs-119 { border: 1px solid dashed; border: 2px dashed #4221f3; padding: 19px; } .editabletexto:hover, editabletexto.pg-state-hover, .pg-node-id-4, .pg-file-cs-119 { border: 1px solid #2196F3; padding: 10px; margin: 10px; }</style>
+        <script src="js/jquery-3.3.1.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/jquery.nice-select.min.js"></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/jquery.slicknav.js"></script>
+        <script src="js/mixitup.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/main.js"></script>
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+        <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuesax@4.0.1-alpha.16/dist/vuesax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.5"></script>
+    <script src="sortable.min.js"></script>
+    <script>
+        const aplicacion = new Vue({
+                            el: '#appEdit',
+                            data: {
+                                options:[
+                                    {
+                                        name:'Menu',
+                                        img: 'SVG NO EMBEBIDO/lista 1.svg',
+                                        id:0,
+                                        
+                                    },
+                                    {
+                                        name:'Slider de imagenes',
+                                        img: 'SVG NO EMBEBIDO/imagen 1.svg',
+                                        id:1,
+                                        html:` <div class="hea"  style="height: 80vh; margin-top: 6rem; max-width: 1300px;
+                                            margin-left: auto;
+                                            margin-right: auto; display: flex; justify-content: space-between; flex-direction:column;" id="header" onclick="header()">
+                                                <div style="width: 100%;     align-items: center; display: flex; justify-content: space-between; height:100%;">
+                                                <div style="margin-left: 5rem;">
+                                                        <div>
+                                                            <h2 style="font-family: 'Montserrat', sans-serif; letter-spacing: 7px;
+                                                            font-style: normal;
+                                                            font-weight: normal;
+                                                            font-size: 28px;
+                                                            line-height: 35px;">Descuento</h2>
+                                                        </div>
+                                                        <div>
+                                                            <h1 style="     font-weight: 800;
+                                                            font-size: 50px;">2x1 Apple watch</h1>
+                                                            <p style="font-family:helvetica; margin:0; font-size:14px; margin-top:5px;">Oferta solo displonible de 24 de octubre al 25 de diciembre</p>
+                                                        </div>
+                                                        <div>
+                                                            <button style="background:#000; color:#fff;border-radius:0; border:none; padding: 0.5rem 3rem; font-family:helvetica;    font-size: 12px; margin-top: 2.5rem;">Comprar</button>
+                                                        </div>
+                                                        <div style="display: flex; position: absolute; width:10%;justify-content: space-between; margin-left: 2rem; margin-top: 8rem;">
+                                                                <div style="width:20px; height:10px; background: #e7e7e7; border-radius: 2rem;"></div>
+                                                                <div style="width:40px; height:10px; background: #000000; border-radius: 2rem;"></div>
+                                                                <div style="width:20px; height:10px; background: #e7e7e7; border-radius: 2rem;"></div>
+                                                                <div style="width:20px; height:10px; background: #e7e7e7; border-radius: 2rem;"></div>
+                                                            </div>
+                                                </div>
+                                                <div class="reloj" style="background:#F4F7F8; height: 80%; display: flex; justify-content: center; align-items: center; width: 30%;padding-top:5rem; 
+                                                margin-right: 12rem;">
+                                                    <img src="assetsPlantillas/reloj1.png" style="position: absolute; margin-left: -5rem;" alt="">
+                                                    <img src="assetsPlantillas/reloj2.png" style="margin-top: -16rem; margin-left: 4rem;" alt="">
+                                                </div>
+                                            </div>
+                                        
+                                            </div>`
+                                    },
+                                    {
+                                        name:'Productos destacados',
+                                        img: 'SVG NO EMBEBIDO/zapatos 1.svg',
+                                        id:2,
+                                        html:`<div style="width: 100%;height: 150px; background:#F4F7F8; "></div>
+                                             <div class="reloj"  onclick="productos()" style="margin: -7rem 0rem 0rem;    padding: 1rem; display: flex; justify-content: space-around;  max-width: 1300px;">
+                                                <div style="height:12rem; flex-basis:calc(20% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                width: 100%; display:flex; flex-direction: column; align-items: center; padding: 1rem 0.5rem; " v-for="todo in todos "> 
+                                                <div style="width: 100%; display: flex; justify-content: flex-end;     margin-left: 3rem;">
+                                                    <span class="iconify" style="    margin-top: -1.5rem;
+                                                    background: #fff;
+                                                    padding: 0.5rem;
+                                                    border-radius: 50px;     box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                                                </div>
+                                                <div style="height:11rem; margin-bottom: 0.5rem; display: flex; 
+                                                justify-content: center; width: 150px;">
+                                                        <img :src="todo.img" v-bind:style="{width:todo.width, height:todo.height}" alt="">
+                                                </div>
+                                                    <div style="margin-top: -1.5rem; display: flex;
+                                                    flex-direction: column;
+                                                    justify-content: flex-start;
+                                                    width: 100%;
+                                                    margin-left: 1rem;">
+                                                        <p style="margin:0;font-family: helvetica; font-size:12px;">{{todo.name}}</p>
+                                                        <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">S/.{{todo.precio}}</p>
+                                                    </div> 
+                                                </div>
+                                                </div> `
+                                    },
+                                    {
+                                        name:'Productos: Televisores',
+                                        img: 'SVG NO EMBEBIDO/zanahoria.svg',
+                                        id:3,
+                                        html:`<div  onclick="demasProd()" style="padding: 1rem; margin-bottom: 3rem; margin-top:3rem; max-width: 1300px;
+                                                        margin-left: auto;
+                                                        margin-right: auto; ">
+                                                        <h4 style="font-family: 'Work Sans', sans-serif; margin-bottom: 1rem;">Televisores</h4>
+                                                        <div style="display: flex; justify-content: center;">
+                                                        <div style="width: 100%; display: flex; flex-wrap:wrap;  ">
+                                                                
+                                                                <div style="height:12rem; flex-basis:calc(16% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75); margin-bottom: 1rem;
+                                                                width: 100%; display:flex; flex-direction: column;  align-items: center; padding: 1rem 0.5rem;  margin-right: 2.5rem;" class="tarjet" v-for="tv in televisores "> 
+                                                                <div style="width: 100%; display: flex; justify-content: flex-end;     margin-left: 3rem;"  @click="getDatos(tv.name, tv.precio, tv.width, tv.height, tv.img)">
+                                                                        <span class="iconify" style="    margin-top: -1.5rem;
+                                                                        background: #fff;
+                                                                        padding: 0.5rem;
+                                                                        border-radius: 50px;     box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                                                                    </div>
+                                                                <div style="height:11rem; margin-bottom: 0.5rem; display: flex; 
+                                                                justify-content: center; width: 150px;">
+                                                                        <img :src="tv.img" v-bind:style="{width:tv.width, height:tv.height}" alt="">
+                                                                </div>
+                                                                    <div style="margin-top: -1.5rem; display: flex;
+                                                                    flex-direction: column;
+                                                                    justify-content: flex-start;
+                                                                    width: 100%;
+                                                                    margin-left: 1rem;">
+                                                                        <p style="margin:0;font-family: helvetica; font-size:12px;">{{tv.name}}</p>
+                                                                        <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">S/.{{tv.precio}}</p>
+                                                                    </div> 
+                                                                </div>
+                                                                
+                                                                </div>
+                                                            </div>
+                                                            </div>`
+                                    },  
+                                    {
+                                        name:'Productos: Celulares',
+                                        img: 'SVG NO EMBEBIDO/zanahoria.svg',
+                                        id:4
+                                    },  
+                                    {
+                                        name:'Pie de página',
+                                        img: 'SVG NO EMBEBIDO/pie-de-pagina 1.svg',
+                                        id:5
+                                    },
+                                ],
+                                init:9,
+                                fin:8,
+                                datosN:[],
+                                items:{},
+                                movidoD: [],
+                                movidoU: [],
+                                Cclick: 0,
+                                itemUno:[]
+                            },
+                            methods: {
+                                sortable(){
+                                    
+                                    var valorUno =  localStorage.getItem('inicio')
+                                    var valorDos = localStorage.getItem('final')
+                                    var valorMovidoU = localStorage.getItem('movidoUno');
+                                    var valorMovidoD = localStorage.getItem('movidoDos');
+                                    
+                                    
+
+                                    this.init = valorUno
+                                    this.fin = valorDos
+                                    this.movidoU = JSON.parse(valorMovidoU)
+                                    this.movidoD = JSON.parse(valorMovidoD)
+
+                                    
+                                },
+                                unaVez(itemUnos){
+                                    
+                                    this.itemUno.push(
+                                        itemUnos.id
+                                    )
+                                    console.log('solo una vez',this.itemUno)
+                                    localStorage.setItem('idUno', JSON.stringify(this.itemUno))   
+                         
+                                },
+                                obtener(item){
+                                   this.items = item
+                                   
+                                },
+                                enviar(){
+                                    console.log(this.init, this.fin)
+                                    this.Cclick = this.Cclick + 1
+                                    this.datosN.push({
+                                        init: this.init,
+                                        fin: this.fin,
+                                        item: this.items,
+                                        movidoU: this.movidoU,
+                                        movidoD: this.movidoD,
+                                        Cclick:this.Cclick
+                                    })
+                                    var iframe = document.getElementById('my-iframe');
+                                        if (iframe && iframe.contentWindow) {
+                                            iframe.contentWindow.postMessage(this.datosN,'*');
+                                        }
+                                        
+                                        this.datosN = []
+                                        
+                                        console.log(this.datosN, this.itemUno)
+                                        console.log(this.init, this.fin)
+                                },
+                                movi(item){
+                                    console.log('me he movido', item)
+                                }
+                            },
+                            created(){
+                                localStorage.removeItem('final');
+                                localStorage.removeItem('inicio');
+                                localStorage.removeItem('movidoUno');
+                                localStorage.removeItem('movidoDos');
+                                localStorage.removeItem('valorsillo');
+                                localStorage.removeItem('valorsilloD');
+                                localStorage.removeItem('idUno');
+                                }
+        })
+    </script>
+ 
+        <script>
+            var mover = document.getElementById('mover');
+          const sort =  new Sortable(mover, {
+                                    animation: 150,
+                                    group:  'shared',
+                                    onChoose: function(evento, ini)  {
+                                       ini = evento.oldIndex
+                                        console.log('Se ha seleccionado un elemento', ini)
+                                        localStorage.setItem('inicio', ini)
+                                    },
+                                    onChange: function(evento, fi)  { 
+                                        evento.newIndex;   
+                                       fi = evento.newIndex
+                                        console.log('Se ha cambiado un elemento', fi)
+                                        localStorage.setItem('final', fi)
+                                    }, 
+                                    onMove: function (/**Event*/ evt, /**Event*/ originalEvent) {
+                                    // Example: https://jsbin.com/nawahef/edit?js,output
+                                    console.log(evt.dragged); // dragged HTMLElement
+                                    console.log(evt.related); // HTMLElement on which have guided
+                                    var itemU = evt.dragged
+                                    var itemD = evt.related
+                                    var movidoUno = []
+                                    var movidoDos = []
+                                    
+                                    movidoUno.push(
+                                        itemU
+                                    )
+
+                                    movidoDos.push(
+                                        itemD
+                                    )
+                                    localStorage.setItem('movidoUno', JSON.stringify(movidoUno));   
+                                    localStorage.setItem('movidoDos', JSON.stringify(movidoDos)); 
+                                },
+                                    
+                                    });
+        </script>
+        
+        <script>
+           
+        </script>
+
+        <script>
+        $(document).ready(function(){
+    $(".inputabrir").click(function(){
+    $(".opciones").css("display","block");
+    $(".inputabrir").css("box-shadow","rgba(136, 136, 136, 0.41) 1px 1px 20px");
+    $(".inputabrir").css("border","1px solid #ccc");
+
+
+  });
+    $(document).on("click",function(e) {
+
+         var container = $(".conjunto");
+
+            if (!container.is(e.target) && container.has(e.target).length === 0) {
+               $(".opciones").css("display","none");
+                 $(".inputabrir").css("box-shadow","none");
+            }
+     });
+});
+</script>
+<script>
+    $('.cambio').on("drop",function(){
+        $(this).addClass('bordes')
+        console.log('1')
+    })
+</script>
+    </body>
+</html>

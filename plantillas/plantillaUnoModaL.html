@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/Nueva carpeta (2)/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/vuesax@4.0.1-alpha.16/dist/vuesax.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Work+Sans:wght@700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="normaliza.css">
+    <link href="style.css" rel="stylesheet">
+    <title>Dreez</title>
+    <style>
+       
+        *{
+            font-family: helvetica;
+        }
+        p{
+            margin:0;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin:0;
+        }
+        h2 {
+            margin:0;
+        }
+        h3 {
+            margin:0;
+        }
+        h4 {
+            margin:0;
+        }
+        h5 {
+            margin:0;
+        }
+        h6 {
+            margin:0;
+        }
+        input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+/* 2.1 THUMB */
+
+input[type=range]::-webkit-slider-thumb {
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  border: 4px solid rgb(0, 0, 0);
+  border-radius: 50%;
+  margin-top: -5px;
+}
+
+input[type=range]::-moz-range-thumb {
+  background-color: #555;
+  width: 10px;
+  height: 10px;
+  border: 6px solid rgb(0, 0, 0);
+  border-radius: 50%;
+}
+
+input[type=range]::-ms-thumb {
+  background-color: #555;
+  width: 15px;
+  height: 15px;
+  border: 4px solid rgb(0, 0, 0);
+  border-radius: 50%;
+}
+/* 2.2 TRACK */
+
+input[type=range]::-webkit-slider-runnable-track {
+  background-color: #e7e7e7;
+  height: 3px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  outline: none;
+}
+
+input[type=range]::-moz-range-track {
+  background-color: #555;
+  height: 3px;
+}
+
+input[type=range]::-ms-track {
+  background-color: #555;
+  height: 3px;
+}
+
+input[type=range]::-ms-fill-lower {
+  background-color: HotPink
+}
+
+input[type=range]::-ms-fill-upper {
+  background-color: black;
+}
+.vs-input{
+    width: 100%;
+    padding: 10px 15px 10px 15px;
+}
+.w3-modal {
+    z-index: 5;
+}
+.barrita{
+    display:none
+}
+@media (max-width:768px) and (min-width: 412px){
+    #menu{
+        display:none
+    }
+    #contenido{
+        margin:0!important;
+    }
+    .input{
+        margin-left: 19rem!important;
+    }
+   .barrita{
+    display:flex;
+    color:#7e7e7e
+    }
+    .cont{
+        max-width: 1700px!important;
+        margin-left: -1remx!important;
+        margin-right: 0rem!important;
+    }
+    .linea{
+        font-size: 50px;
+        margin-right: -1rem;
+        margin-left: 1rem;
+    }
+}
+@media (max-width:411px){
+    #menu{
+        display:none
+    }
+    #contenido{
+        margin:0!important;
+    }
+    .oferta{
+        display:none
+    }
+   .drezz{
+    display:none
+   }
+   .barrita{
+    display:flex;
+    color:#7e7e7e
+    }
+
+    .input{
+        margin-left: 0rem!important;
+        width:33.%!important;
+    
+    }
+    .cont{
+        max-width: 1700px!important;
+        margin-left: -1rem!important;
+        margin-right: 0rem!important;
+
+    }
+    .linea{
+        font-size: 50px;
+        margin-right: -1rem;
+        margin-left: 1rem;
+    }
+
+}
+    </style>
+</head>
+<body>
+    
+<div id="app">
+    <div style="position:fixed; top:0;     z-index: 4;     background: #fff; width:100%;">
+            <div style="position:fixed;      top: 0rem;  z-index: 4;     background: #fff; width:100%;">
+                    <div style="background: #fff; background: linear-gradient(266.39deg, rgba(239, 123, 154, 0.71) 1.86%, rgba(239, 123, 154, 0.71) 34.55%, rgba(255, 92, 0, 0.6) 62.22%); height: 2rem;
+                    width: 100%; top:0; position:fixed;z-index: 4;"></div>
+                    <div style="
+                         height: 7rem;
+                        width: 100%;
+                        left: 0; top:2rem; background: #fff; width: 100%; display: flex; align-items: center;">
+                        <div class="cont" style="max-width: 95%; margin-left: 2rem; margin-right: 3rem; position:fixed; top:3rem;width: 100%; height: 3rem;">
+                            <div style="display: flex; justify-content: space-between; align-items:center; height: 100%;">
+                                <div class="barrita" onclick="menusi()">
+                                        <span class="iconify linea" data-icon="jam:menu" data-inline="false"></span>
+                                </div>
+                                <div style="width:33.33%; " class="drezz">
+                                    <h1 style="font-family:helvetica; font-size: 40px;">Drezz</h1>
+                                </div>
+                                <div class="input" style="display: flex; margin-left:-19rem; align-items:center; width:33.33%">
+                                    <div>
+                                        <span class="iconify " style="font-size: 16px;  color:#7e7e7e" data-icon="oi:magnifying-glass" data-inline="false"></span>
+                                    </div>        
+                                    <div class="mt-2">
+                                        <vs-input  placeholder="Buscar Proveedores" v-model="buscar" @keyup.enter="busqueda()" />
+                                    </div>
+                                </div> 
+                                
+                                <div style="width:33.33%;color:#6b6b6b; text-align:end; display: flex; justify-content: flex-end; align-items: center; cursor: pointer;" onclick="document.getElementById('carrito').style.display='block'">
+                                    <span class="iconify" style="font-size: 30px; margin-right: 1rem;" data-icon="clarity:shopping-cart-line" data-inline="false"></span>
+                                    <p style="margin:0; font-family:helvetica; font-size: 12px;">54 productos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+        
+    </div>
+    <div id="menu" style="width: 300px; height: 100%; position: fixed; background-color: #fff; padding-top:8rem; ">
+            <div style="margin-left:2rem;">
+                    <h1 style="font-size: 20px; font-family: galano;  font-weight: 700; margin-bottom:15px">Explorar</h1>
+                <ul>
+                    <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Nuevos productos</li>
+                    <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Televisores</li>
+                    <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Telefonos</li>
+                    <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Comtadoras</li>
+                    <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Smart watch</li>
+                    <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Audifonos</li>
+                    <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Softwara</li>
+                    <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Escritorios</li>
+                </ul>
+            </div>
+    </div>
+    
+            <div id="contenido" style=" max-width: 1700px;
+            margin-left: 20rem;
+            margin-right: 0;margin-bottom: 3rem; padding-top:7rem;">
+                <div style="width: 100%;     display: flex;     justify-content: flex-end;">
+                        <div style=" width:100%; display:flex; margin-bottom: 2rem; ">
+                                <div style="flex-basis: calc(45% - 1rem);   margin: 0 1rem; display:flex; flex-direction: column; justify-content: center;">
+                                    <div style=" -webkit-box-shadow: 0px 0px 41px -19px rgba(0,0,0,0.75);
+                                    -moz-box-shadow: 0px 0px 41px -19px rgba(0,0,0,0.75);
+                                    box-shadow: 0px 0px 41px -19px rgba(0,0,0,0.75); border-radius: 1rem; background-image: url(assetsPlantillas/vak.png); background-origin: center center; background-size: cover; display:flex; flex-direction:column; align-items:center; justify-content: center; margin: 1rem 0; width:100%; height: 45%;">
+                                        <h1 style="padding: 10px 65px; background-color: #fff; text-align: center; font-family: 'Bebas Neue', cursive; font-size:40px">Coleccíon</h1>
+                                        <h1 style="padding: 10px 35px; background-color: #fff; text-align: center; font-family: 'Bebas Neue', cursive; font-size:40px">2020</h1>
+                                    </div>
+                                    <div style=" -webkit-box-shadow: 0px 0px 41px -19px rgba(0,0,0,0.75);
+                                    -moz-box-shadow: 0px 0px 41px -19px rgba(0,0,0,0.75);
+                                    box-shadow: 0px 0px 41px -19px rgba(0,0,0,0.75); border-radius: 1rem; background: radial-gradient(88.48% 651% at 19.59% 50%, #FF65DD 0%, rgba(255, 0, 0, 0.42) 100%); margin: 1rem 0; width:100%; height: 45%; display:flex;justify-content: space-between;">
+                                        <div style="margin-top: 2rem; margin-left: 2rem; flex-basis: calc(70% - 1rem);">
+                                            <div style="display:flex;">
+                                                <h1 style="font-family: galano; color:#fff; position: absolute; font-size:65px; z-index:3">2X3</h1>
+                                                <h1 style="font-family: galano; color:rgba(255, 255, 255, 0.678); margin-left:7px; position: absolute; font-size:65px; z-index:2">2X3</h1>
+                                                <h1 style="font-family: galano; color:rgba(255, 255, 255, 0.548); margin-left:12px; position: absolute; font-size:65px; z-index:1">2X3</h1>
+                                            </div>
+                                            <h3 style="font-family: helvetica; font-size:23px; color:#fff; margin-top: 5.5rem;">En todos los vestidos</h3>
+                                        </div>
+                                        <div>
+                                                <img src="assetsPlantillas/kisspng-emoji-pop-lightning-sticker-thunder-icon-emoji-5b088c2e8d0458 (2) 2.png" style="height: 230px; margin-right: 10.3rem; position: relative;" alt="">
+                                                <img src="assetsPlantillas/kisspng-emoji-pop-lightning-sticker-thunder-icon-emoji-5b088c2e8d0458 (2) 2.png" style="height: 230px; margin-left: -20rem; position: relative;" alt="">
+                                                <img src="assetsPlantillas/kisspng-emoji-pop-lightning-sticker-thunder-icon-emoji-5b088c2e8d0458 (2) 2.png" style="height: 230px; margin-left: -10rem; position: relative;" alt="">
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <div class="oferta"  style="flex-basis: calc(27.5% - 1rem);  margin: 0 1rem;">
+                                        <div style=" -webkit-box-shadow: 0px 0px 31px -19px rgba(0,0,0,0.75);
+                                        -moz-box-shadow: 0px 0px 31px -19px rgba(0,0,0,0.75);
+                                        box-shadow: 0px 0px 31px -19px rgba(0,0,0,0.75); border-radius: 1rem; background: linear-gradient(180deg, rgba(239, 123, 154, 0.71) 1.86%, rgba(239, 123, 154, 0.71) 34.55%, rgba(255, 92, 0, 0.6) 62.22%); margin: 1rem 0; width:100%; height: 94%; display:flex; justify-content: center;">
+                                                <h1 style="text-align: center; font-family: galano; color:#fff; margin-top: 1rem;">Contáctanos</h1>
+                                            <div style=" width: 250px; background-color: #fff; border-radius: 0.5rem; margin-bottom: 1.5rem;  padding:0 1.5rem; padding-bottom:3rem;  border-radius: 0.5rem; margin-bottom: 1.5rem; position: absolute; z-index: 1; box-shadow: 0px 0px 31px -19px rgba(0,0,0,0.75); margin-top: 4rem;">
+                                                    <div style="margin-top: 4rem; width: 100%;">
+                                                            <vs-input
+                                                            type="text"
+                                                            v-model="nombreArch"
+                                                            label="Nombre "
+                                                            style="width: 100%;"
+                                                            />
+                                                    </div>
+                                                    <div style="margin-top: 4rem; width: 100%; ">
+                                                            <vs-input
+                                                            type="text"
+                                                            v-model="nombreArch"
+                                                            label="Edad"
+                                                            style="width: 100%;"
+                                                            />
+                                                    </div>
+                                                    <div style="width: 100%; justify-content: center; display:flex;">
+                                                        <button style="background:#ffffff;  color:#000000; border-radius:0; border:none; padding: 0.5rem 3rem; font-family: 'Montserrat', sans-serif;   font-size: 12px; margin-top: 2.5rem;">contactar</button>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                </div>
+                                <div class="oferta"   style="flex-basis: calc(27.5% - 1rem);  margin: 0 1rem ;">
+                                    <div style="-webkit-box-shadow: 0px 0px 41px -19px rgba(0,0,0,0.75);
+                                    -moz-box-shadow: 0px 0px 41px -19px rgba(0,0,0,0.75);
+                                    box-shadow: 0px 0px 41px -19px rgba(0,0,0,0.75); background-image: url(assetsPlantillas/Rectangle.png); background-origin: center center; background-size: cover; margin: 1rem 0; width:100%; height: 45.5%;">
+                                    </div>
+                                    <div style="-webkit-box-shadow: 0px 0px 41px -19px rgba(0,0,0,0.75);
+                                    -moz-box-shadow: 0px 0px 41px -19px rgba(0,4,0,0.75);
+                                    box-shadow: 0px 0px 41px -19px rgba(0,0,0,0.75); background-color: #fff; border-radius:10px; margin: 1rem 0; width:100%; height: 35%; padding-left: 1rem;">
+                                    <img src="assetsPlantillas/arrow_arrows_back_direction_left_navigation_right_icon_123236 1.png" alt="" style="float: right; padding-right: 3rem;
+                                    padding-top: 2rem;">
+                                    <h2 style="font-family: galano; font-size: 24px; padding-top: 5rem;">Separa tu cita</h2>
+                                    </div>
+                                </div>
+                            </div>
+                </div>
+                
+                <div>
+                    <div style="display: flex; margin-bottom: 1rem; align-items: center;">
+                            <img src="assetsPlantillas/rosa.png" alt="">
+                            <h4 style="font-family: 'Work Sans', sans-serif; margin-left:1rem; font-size:25px;">Productos nuevos</h4>
+                    </div>
+            
+            <div style="display: flex;">
+            <div style="  display: flex; justify-content: flex-end;  flex-wrap:wrap; ">
+                    <div style="display: flex;  flex-wrap:wrap;">
+                    <div style="height:12rem; flex-basis:calc(16% - 2rem); background: #fff; -webkit-box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 25px -17px;
+                    -moz-box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 25px -17px;
+                    box-shadow: rgba(0, 0, 0, 0.75) 0px 0px 25px -17px; margin-bottom: 1rem;
+                    width: 100%; display:flex; flex-direction: column;  align-items: center; padding: 1rem 0.5rem;  margin-right: 1.5rem;" v-for="tv in televisores"  > 
+                    <div style="width: 100%; display: flex; justify-content: flex-end;     margin-left: 3rem;">
+                            <span class="iconify" style="    margin-top: -1.5rem;
+                            background: #fff;
+                            padding: 0.5rem;
+                            border-radius: 50px;     box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                        </div>
+                    <div style="height:11rem; margin-bottom: 0.5rem; display: flex; 
+                    justify-content: center; width: 150px;">
+                            <img :src="tv.img" v-bind:style="{width:tv.width, height:tv.height}" alt="">
+                    </div>
+                           <div style="margin-top: -1.5rem; display: flex;
+                           flex-direction: column;
+                           justify-content: flex-start;
+                           width: 100%;
+                           margin-left: 1rem;" onclick="document.getElementById('id01').style.display='block'">
+                               <p style="margin:0;font-family: helvetica; font-size:12px;">{{tv.name}}</p>
+                               <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">S/.{{tv.precio}}</p>
+                           </div> 
+                    </div>
+                </div>
+                    </div>
+                </div>
+            </div>
+                </div>
+                <!--Modal-->
+                    <div id="id01" class="w3-modal">
+                      <div class="w3-modal-content w3-animate-top w3-card-4" style="border-radius: 1rem;background: rgba(255, 255, 255, 0.678); width: 600px; backdrop-filter: blur(44px); ">
+                        <header class="w3-container"> 
+                          <span onclick="document.getElementById('id01').style.display='none'" 
+                          class="w3-button w3-display-topright">&times;</span>
+                        </header>
+                        <div class="w3-container" style="padding: 2rem; border-radius: 1rem; display:flex; justify-content: space-between;">
+                            <div>
+                                <img src="assetsPlantillas/Vuno.png" alt="">
+                                <div style="margin-top:10px;">
+                                    <img src="assetsPlantillas/Vtres.png" style="background: #fff; padding: 15px; border-radius:5px; width: 13%;" alt="">
+                                    <img src="assetsPlantillas/Vdos.png" style="background: #fff; padding: 15px; border-radius:5px; width: 15%;" alt="">
+                                    <img src="assetsPlantillas/Vtres.png" style="background: #fff; padding: 15px; border-radius:5px; width: 13%;" alt="">
+                                </div>
+                            </div>
+                            <div>
+                                <div style=" margin-left: 1.5rem;">
+                                    <p style="font-family: galano; margin:0; font-size:20px;">Vestido campestre</p>
+                                    <p style="font-family: helvetica; margin:0; font-size:13px;">Vestido para niña ideal para ir al campo</p>
+                                </div>
+                                    <h2 style=" margin-left: 1.5rem; font-family: helvetica; font-size:37px;">S./74.32</h2>
+                                    <div style=" margin-left: 1.5rem; display: flex; justify-content: space-between; ">
+                                        <div style="background-color: #fff; flex-basis: calc(33.33% - 7px); text-align: center; height: 40px; display: flex; justify-content: center; align-items: center; border-radius: 5px;">
+                                            <p style="margin:0;">XL</p>
+                                        </div>
+                                        <div style="background-color: #fff; flex-basis: calc(33.33% - 7px); text-align: center; height: 40px; display: flex; justify-content: center; align-items: center; border-radius: 5px;">
+                                            <p style="margin:0;">SM</p>
+                                        </div>
+                                        <div style="background-color: #fff; flex-basis: calc(33.33% - 7px); text-align: center; height: 40px; display: flex; justify-content: center; align-items: center; border-radius: 5px;">
+                                            <p style="margin:0;">XS</p>
+                                        </div>
+                                    </div>
+                                    <div style=" margin-left: 1.5rem;">
+                                        <div style=" height: 40px;  width: 100%; background-color: #fff; margin-top: 1rem; border-radius: 5px; display:flex; align-items: center;">
+                                            <p style="margin:0; font-family: galano; margin-left: 1rem;">Añadir al carrito</p>
+                                        </div>
+                                        <div style="width: 100%; justify-content: center; display:flex;">
+                                            <button style="background: linear-gradient(90.82deg, #E84B78 -11.4%, #EC9578 123.05%); border-radius: 5px;  color:#ffffff; border-radius:5px; border:none; padding: 0.5rem 1rem; font-family:galano;   font-size: 12px; margin-top: 1rem; height: 40px; text-align: start; width: 100%;">Comprar</button>
+                                        </div>
+                                    </div>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div id="carrito" style="display:none;">
+                        <div style="position: fixed; z-index: 4; height: 400px;  width: 260px; background: rgba(255, 255, 255, 0.77);
+                        box-shadow: 0px 16px 39px rgba(0, 0, 0, 0.09);
+                        backdrop-filter: blur(44px); top: 6rem; right: 3rem; border-radius: 1rem; padding: 1rem; padding-right: 0rem; ">
+                        <div style="height: 350px;overflow: auto;    padding-right: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;" v-for="ele in datosGuardados">
+                                <img :src="ele.img" style="width:15%; flex-basis: calc(20% - 1rem);" alt="">
+                                <p style="margin: 0; font-family: 'Montserrat', sans-serif;  font-size: 11px; flex-basis: calc(50% - 1rem);">{{ele.name}}</p>
+                                <p style="margin: 0; font-family: 'Montserrat', sans-serif;  font-size: 11px; flex-basis: calc(10% - 1rem);">X1</p>
+                            </div>
+                        </div>
+                            <p style="margin: 0; font-family: galano; padding: 1rem; font-size: 15px; flex-basis: calc(50% - 1rem); text-align: end;">S/.65.2</p>
+                        </div>
+                      </div>
+        </div>
+
+    <script src="/Nueva carpeta (2)/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuesax@4.0.1-alpha.16/dist/vuesax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.5"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="https://unpkg.com/vue-select@3.0.0"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+
+        <script>
+            const aplicacion = new Vue( {
+                el: '#app',
+                            data: {
+                                todos:[
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/vestido.png',
+                                       width:'70%',
+                                       height: '80%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/zap.png',  
+                                       width:'80%',
+                                       height: '70%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/boina.png',
+                                       width:'100%',
+                                       height: '70%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/chak.png' ,
+                                       width:'100%',
+                                       height: '90%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/vestidoDos.png',
+                                       width:'80%',
+                                       height: '90%' 
+                                    },
+                                ],
+                                televisores:[
+                                {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/vestido.png',
+                                       width:'70%',
+                                       height: '80%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/zap.png',  
+                                       width:'80%',
+                                       height: '70%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/boina.png',
+                                       width:'80%',
+                                       height: '70%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/chak.png' ,
+                                       width:'80%',
+                                       height: '80%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/vestidoDos.png',
+                                       width:'80%',
+                                       height: '90%' 
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/vestido.png',
+                                       width:'70%',
+                                       height: '80%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/zap.png',  
+                                       width:'80%',
+                                       height: '70%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/boina.png',
+                                       width:'80%',
+                                       height: '70%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/chak.png' ,
+                                       width:'80%',
+                                       height: '80%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/vestidoDos.png',
+                                       width:'80%',
+                                       height: '90%' 
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/vestido.png',
+                                       width:'70%',
+                                       height: '80%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/zap.png',  
+                                       width:'80%',
+                                       height: '70%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/boina.png',
+                                       width:'80%',
+                                       height: '70%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/chak.png' ,
+                                       width:'80%',
+                                       height: '80%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/vestidoDos.png',
+                                       width:'80%',
+                                       height: '90%' 
+                                    },
+                                ],
+                                datosLocal:[],
+                                datosGuardados:[]
+
+                            },
+                            methods: {
+                                getDatos(name, precio, width, height, img){
+                                    this.datosLocal.push({
+                                        name:name,
+                                        precio:precio,
+                                        width:width,
+                                        height:height,
+                                        img:img
+                                    })
+                                    console.log(this.datosLocal)
+                                    localStorage.setItem('this.datosLocal', JSON.stringify(this.datosLocal));
+                                    this.getInfo()
+                                },
+                                
+                                getInfo(){
+                                    var guardado = localStorage.getItem('this.datosLocal');
+                                    this.datosGuardados = JSON.parse(guardado) 
+                                    console.log('objetoObtenido: ', this.datosGuardados);
+                                }
+                            },
+                            created() {
+                                this.getInfo()
+                            },
+
+            })
+        </script>
+        <script src="assets/js/jquery.min.js"></script>
+        <script>
+            $(document).click(function(){
+				$('#carrito').css("display", "none");
+        });
+          
+        </script>
+        <script>
+            function menusi(){
+
+                let element = document.getElementById('menu');
+                let elementStyle = window.getComputedStyle(element);
+                let elementColor = elementStyle.getPropertyValue('display');
+               console.log(elementColor)
+               if(elementColor == 'none'){
+                document.getElementById('menu').style.display='block'
+               } else if(elementColor == 'block'){
+                document.getElementById('menu').style.display='none' 
+               }
+            }
+        </script>
+</body>
+</html>

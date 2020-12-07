@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 87 62" width="87" height="62" style="fill:#000000">
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #000000 }
+	</style>
+	<path id="Shape 1" class="shp0" d="M13 43L15 43L15 53L13 53L13 43Z" />
+	<path id="Shape 2" class="shp0" d="M19 43L21 43L21 53L19 53L19 43Z" />
+	<path id="Shape 3" class="shp0" d="M25 19L27 19L27 53L25 53L25 19Z" />
+	<path id="Shape 4" class="shp0" d="M31 14L33 14L33 53L31 53L31 14Z" />
+	<path id="Shape 5" class="shp0" d="M38 40L40 40L40 53L38 53L38 40Z" />
+	<path id="Shape 6" class="shp0" d="M44 43L46 43L46 53L44 53L44 43Z" />
+	<path id="Shape 7" class="shp0" d="M50 40L52 40L52 53L50 53L50 40Z" />
+	<path id="Shape 8" class="shp0" d="M56 47L58 47L58 53L56 53L56 47Z" />
+	<path id="Shape 9" class="shp0" d="M62 43L64 43L64 53L62 53L62 43Z" />
+	<path id="Shape 10" class="shp0" d="M68 44L70 44L70 53L68 53L68 44Z" />
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 328" width="540" height="328">
+	<defs>
+		<image width="520" height="671" id="img1" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MjAgNjcxIiB3aWR0aD0iNTIwIiBoZWlnaHQ9IjY3MSI+Cgk8c3R5bGU+CgkJdHNwYW4geyB3aGl0ZS1zcGFjZTpwcmUgfQoJCS5zaHAwIHsgZmlsbDogI2QxZDFkMSB9IAoJCS5zaHAxIHsgZmlsbDogbm9uZTtzdHJva2U6ICNmZmZmZmY7c3Ryb2tlLXdpZHRoOiA3LjggfSAKCTwvc3R5bGU+Cgk8ZyBpZD0iTGF5ZXIiPgoJCTxnIGlkPSJMYXllciI+CgkJCTxwYXRoIGlkPSJTaGFwZSAxIiBjbGFzcz0ic2hwMCIgZD0iTTEwIDEwTDUxNCAxMEw1MTQgMzdMMTAgMzdMMTAgMTBaIiAvPgoJCQk8cGF0aCBpZD0iU2hhcGUgMSBjb3B5IiBjbGFzcz0ic2hwMCIgZD0iTTEwIDUwTDUwOSA1MEw1MDkgMjYyTDEwIDI2MkwxMCA1MFoiIC8+CgkJCTxwYXRoIGlkPSJTaGFwZSAxIGNvcHkgNSIgY2xhc3M9InNocDAiIGQ9Ik0xMiA0MzlMNTA4IDQzOUw1MDggNTQ0TDEyIDU0NEwxMiA0MzlaIiAvPgoJCQk8cGF0aCBpZD0iU2hhcGUgMSBjb3B5IDYiIGNsYXNzPSJzaHAwIiBkPSJNMTIgNTUyTDUwOCA1NTJMNTA4IDY1N0wxMiA2NTdMMTIgNTUyWiIgLz4KCQkJPHBhdGggaWQ9IlNoYXBlIDEgY29weSAyIiBjbGFzcz0ic2hwMCIgZD0iTTEyIDI3MUwxNzEuNTIgMjcxTDE3MS41MiA0MzJMMTIgNDMyTDEyIDI3MVoiIC8+CgkJCTxwYXRoIGlkPSJTaGFwZSAxIGNvcHkgMyIgY2xhc3M9InNocDAiIGQ9Ik0xODIuMjEgMjcxTDM0MS43MyAyNzFMMzQxLjczIDQzMkwxODIuMjEgNDMyTDE4Mi4yMSAyNzFaIiAvPgoJCQk8cGF0aCBpZD0iU2hhcGUgMSBjb3B5IDQiIGNsYXNzPSJzaHAwIiBkPSJNMzQ5LjQ4IDI3MUw1MDkgMjcxTDUwOSA0MzJMMzQ5LjQ4IDQzMkwzNDkuNDggMjcxWiIgLz4KCQk8L2c+CgkJPHBhdGggaWQ9IlNoYXBlIDIiIGNsYXNzPSJzaHAxIiBkPSJNMTE5IDEzMUwzOTYgMTMxTDM5NiAxNzJMMTE5IDE3MkwxMTkgMTMxWiIgLz4KCTwvZz4KCTxnIGlkPSJMYXllciI+Cgk8L2c+Cgk8ZyBpZD0iTGF5ZXIiPgoJPC9nPgoJPGcgaWQ9IkxheWVyIj4KCTwvZz4KCTxnIGlkPSJMYXllciI+Cgk8L2c+Cgk8ZyBpZD0iTGF5ZXIiPgoJPC9nPgoJPGcgaWQ9IkxheWVyIj4KCTwvZz4KCTxnIGlkPSJMYXllciI+Cgk8L2c+Cgk8ZyBpZD0iTGF5ZXIiPgoJPC9nPgoJPGcgaWQ9IkxheWVyIj4KCTwvZz4KCTxnIGlkPSJMYXllciI+Cgk8L2c+Cgk8ZyBpZD0iTGF5ZXIiPgoJPC9nPgoJPGcgaWQ9IkxheWVyIj4KCTwvZz4KCTxnIGlkPSJMYXllciI+Cgk8L2c+Cgk8ZyBpZD0iTGF5ZXIiPgoJPC9nPgoJPGcgaWQ9IkxheWVyIj4KCTwvZz4KPC9zdmc+"/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+		.shp0 { fill: #d1d1d1 } 
+	</style>
+	<g id="Layer">
+		<path id="Shape 3" class="shp0" d="M289 335L0 334.31L145.09 84.38L289 335Z" />
+		<path id="Shape 3 copy" class="shp0" d="M716 346.69L132 345.83L425.2 34L716 346.69Z" />
+		<path id="Shape 4" class="shp0" d="M82.5 90C63.42 90 48 74.58 48 55.5C48 36.42 63.42 21 82.5 21C101.58 21 117 36.42 117 55.5C117 74.58 101.58 90 82.5 90Z" />
+		<use id="backn-svg (3)" href="#img1" transform="matrix(0.462,0,0,0.462,537,38)"/>
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+	<g id="Layer">
+	</g>
+</svg>

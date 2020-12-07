@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/Nueva carpeta (2)/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/vuesax@4.0.1-alpha.16/dist/vuesax.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Work+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="normaliza.css">
+    <link href="style.css" rel="stylesheet">
+    <title>Dreez</title>
+    <style>
+        *{
+            font-family: helvetica;
+        }
+        p{
+            margin:0;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin:0;
+        }
+        h2 {
+            margin:0;
+        }
+        h3 {
+            margin:0;
+        }
+        h4 {
+            margin:0;
+        }
+        h5 {
+            margin:0;
+        }
+        h6 {
+            margin:0;
+        }
+        input[type='range'],
+input[type='range']::-webkit-slider-runnable-track,
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+/* 2.1 THUMB */
+
+input[type=range]::-webkit-slider-thumb {
+  background-color: #fff;
+  width: 15px;
+  height: 15px;
+  border: 4px solid rgb(0, 0, 0);
+  border-radius: 50%;
+  margin-top: -5px;
+}
+
+input[type=range]::-moz-range-thumb {
+  background-color: #555;
+  width: 10px;
+  height: 10px;
+  border: 6px solid rgb(0, 0, 0);
+  border-radius: 50%;
+}
+
+input[type=range]::-ms-thumb {
+  background-color: #555;
+  width: 15px;
+  height: 15px;
+  border: 4px solid rgb(0, 0, 0);
+  border-radius: 50%;
+}
+/* 2.2 TRACK */
+
+input[type=range]::-webkit-slider-runnable-track {
+  background-color: #e7e7e7;
+  height: 3px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  outline: none;
+}
+
+input[type=range]::-moz-range-track {
+  background-color: #555;
+  height: 3px;
+}
+
+input[type=range]::-ms-track {
+  background-color: #555;
+  height: 3px;
+}
+
+input[type=range]::-ms-fill-lower {
+  background-color: HotPink
+}
+
+input[type=range]::-ms-fill-upper {
+  background-color: black;
+}
+    </style>
+</head>
+<body>
+    
+<div id="app">
+    <div style="position:fixed; top:0;     z-index: 3;     background: #fff; width:100%;">
+            <div style="position:fixed; top:0;     z-index: 3;     background: #fff; width:100%;">
+                    <div style="-webkit-box-shadow: 0px 19px 31px -23px rgba(0,0,0,0.75);
+                        -moz-box-shadow: 0px 19px 31px -23px rgba(0,0,0,0.75);
+                        box-shadow: 0px 19px 31px -23px rgba(0,0,0,0.75);
+                         height: 3rem;
+                        width: 100%;
+                        left: 0; top:0; background: #fff; width: 100%;">
+                        <div style="max-width: 95%; margin-left: 2rem; margin-right: 3rem; position:fixed; top:0;width: 100%; height: 3rem;">
+                            <div style="display: flex; justify-content: space-between; align-items:center; height: 100%;">
+                                <div style="width:33.33%; ">
+                                    <h1 style="font-family:helvetica; font-size: 20px;">DREZZ</h1>
+                                </div>
+                                <div style="display: flex; margin-left:-19rem; align-items:center; width:33.33%">
+                                    <div>
+                                        <span class="iconify" style="font-size: 16px;  color:#7e7e7e" data-icon="oi:magnifying-glass" data-inline="false"></span>
+                                    </div>        
+                                    <div class="mt-2">
+                                        <vs-input  placeholder="Buscar Proveedores" v-model="buscar" @keyup.enter="busqueda()" />
+                                    </div>
+                                </div> 
+                                
+                                <div style="width:33.33%;color:#6b6b6b; text-align:end; display: flex; justify-content: flex-end; align-items: center; cursor:pointer" onclick="document.getElementById('carrito').style.display='block'">
+                                    <span class="iconify" style="font-size: 30px; margin-right: 1rem;" data-icon="clarity:shopping-cart-line" data-inline="false"></span>
+                                    <p style="margin:0; font-family:helvetica; font-size: 12px;">54 productos</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                </div>
+        
+    </div>
+    
+            <div style=" margin-bottom: 3rem; margin-top:5rem; margin-left: 3rem; margin-bottom: 2rem;">
+               <div style="display:flex; margin-left: 3rem; align-items: center;">
+                  <img src="assetsPlantillas/arch.png" alt="">
+                  <h4 style="font-family: 'Work Sans', sans-serif; margin-left: 1rem; font-size:20px;">Ventas</h4>
+               </div>
+               <div>
+               <div style="display: flex;">
+                  <div style="display:flex; width: 100%; margin-left: 2rem; -webkit-box-shadow: 0px 10px 53px -21px rgba(0,0,0,0.75); -moz-box-shadow: 0px 10px 53px -21px rgba(0,0,0,0.75); box-shadow: 0px 10px 53px -21px rgba(0,0,0,0.75);">
+                     <p style="margin: 0; font-family:galano; align-items: center; flex-basis: calc(30% - 1rem);">Nombre</p>
+                     <p style="margin: 0; font-family:galano; align-items: center; flex-basis: calc(10% - 1rem);">Cantidad</p>
+                     <p style="margin: 0; font-family:galano; align-items: center; flex-basis: calc(10% - 1rem);">Precio</p>
+                     <p style="margin: 0; font-family:galano; align-items: center; flex-basis: calc(50% - 1rem);">Sub total</p>
+                  </div>
+               </div>
+               <div style="display: flex; flex-direction: column; justify-content: space-between;">
+               <div style="display: flex; margin-top:2rem;" v-for="todo in todos" onclick="document.getElementById('id01').style.display='block'">
+                     <div style="display:flex; width: 100%; margin-left: 2rem; height: 3rem; align-items: center; -webkit-box-shadow: 0px 10px 53px -21px rgba(0,0,0,0.75); -moz-box-shadow: 0px 10px 53px -21px rgba(0,0,0,0.75); box-shadow: 0px 10px 53px -21px rgba(0,0,0,0.75);">
+                        <p style="margin: 0; font-family:helvetica; font-size: 13px; align-items: center; flex-basis: calc(30% - 1rem);">{{todo.name}}</p>
+                        <p style="margin: 0; font-family:helvetica; font-size: 13px; align-items: center; flex-basis: calc(10% - 1rem);">{{todo.cantidad}}</p>
+                        <p style="margin: 0; font-family:helvetica; font-size: 13px; align-items: center; flex-basis: calc(10% - 1rem);">S/.{{todo.preio}}</p>
+                        <p style="margin: 0; font-family:helvetica; font-size: 13px; align-items: center; flex-basis: calc(50% - 1rem);">S/.{{todo.subTotal}}</p>
+                     </div>
+                  </div>
+                  <div style="width: 100%; display:flex; justify-content: flex-end; margin-top: 5rem; margin-left: -4rem;">
+                        <div style=" height: 350px; width: 250px; background: rgba(255, 255, 255, 0.77);
+                        box-shadow: 0px 16px 39px rgba(0, 0, 0, 0.09);
+                        backdrop-filter: blur(44px); border-radius: 1rem; padding: 1.5rem;">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                <p style="margin: 0; font-family: 'Montserrat', sans-serif;  font-size: 13px;">Sub total</p>
+                                <p style="margin: 0; font-family: 'Montserrat', sans-serif;  font-size: 13px;">S/.53</p>
+                            </div>
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                 <p style="margin: 0; font-family: 'Montserrat', sans-serif;  font-size: 13px;">IGV</p>
+                                 <p style="margin: 0; font-family: 'Montserrat', sans-serif;  font-size: 13px;">S/.53</p>
+                             </div>
+                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                 <p style="margin: 0; font-family: 'Montserrat', sans-serif;  font-size: 13px;">Envio</p>
+                                 <p style="margin: 0; font-family: 'Montserrat', sans-serif;  font-size: 13px;">S/.53</p>
+                             </div>
+                             <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                                 <p style="margin: 0; font-family: 'Montserrat', sans-serif;  font-size: 13px;">Total</p>
+                                 <p style="margin: 0; font-family: 'Montserrat', sans-serif;  font-size: 13px;">S/.53</p>
+                             </div>
+                             <div style="display: flex; justify-content: flex-end; align-items: center; margin-bottom: 1rem; width:100%;">
+                                 <p style="margin: 0; font-family: galano;  font-size: 13px; text-align: end;">S/.53</p>
+                             </div>
+                        </div>
+                        </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div id="id01" class="w3-modal">
+               <div class="w3-modal-content w3-animate-top w3-card-4" style="border-radius: 1rem;background: rgba(255, 255, 255, 0.678); width: 360px; backdrop-filter: blur(44px); ">
+                 <header class="w3-container"> 
+                   <span onclick="document.getElementById('id01').style.display='none'" 
+                   class="w3-button w3-display-topright">&times;</span>
+                 </header>
+                 <div class="w3-container" style="padding: 2rem; border-radius: 1rem;">
+                  <div>
+                     <h2 style="font-family: galano; text-align: center; font-size: 18px;">Envio</h2>
+                  </div>
+                  <div>
+                        <h2 style="font-family: galano; text-align: center; font-size: 18px;">Pago</h2>
+                  </div>
+                 </div>
+               </div>
+           </div>
+
+           <div id="carrito" style="display:none;">
+                <div style="position: fixed; z-index: 4; height: 400px;  width: 260px; background: rgba(255, 255, 255, 0.77);
+                box-shadow: 0px 16px 39px rgba(0, 0, 0, 0.09);
+                backdrop-filter: blur(44px); top: 6rem; right: 3rem; border-radius: 1rem; padding: 1rem; padding-right: 0rem; ">
+                <div style="height: 350px;overflow: auto;    padding-right: 1rem;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;" v-for="ele in datosGuardados">
+                        <img :src="ele.img" style="width:15%; flex-basis: calc(20% - 1rem);" alt="">
+                        <p style="margin: 0; font-family: 'Montserrat', sans-serif;  font-size: 11px; flex-basis: calc(50% - 1rem);">{{ele.name}}</p>
+                        <p style="margin: 0; font-family: 'Montserrat', sans-serif;  font-size: 11px; flex-basis: calc(10% - 1rem);">X1</p>
+                    </div>
+                </div>
+                    <p style="margin: 0; font-family: galano; padding: 1rem; font-size: 15px; flex-basis: calc(50% - 1rem); text-align: end;">S/.65.2</p>
+                </div>
+             </div>
+      </div>
+
+    <script src="/Nueva carpeta (2)/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuesax@4.0.1-alpha.16/dist/vuesax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.5"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="https://unpkg.com/vue-select@3.0.0"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+        <script>
+            const aplicacion = new Vue( {
+                el: '#app',
+                            data: {
+                                todos:[
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       cantidad: 6,
+                                       precio:'156,39',
+                                       subTotal:'123,45'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       cantidad: 6,
+                                       precio:'156,39',
+                                       subTotal:'123,45'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       cantidad: 6,
+                                       precio:'156,39',
+                                       subTotal:'123,45'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       cantidad: 6,
+                                       precio:'156,39',
+                                       subTotal:'123,45'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       cantidad: 6,
+                                       precio:'156,39',
+                                       subTotal:'123,45'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       cantidad: 6,
+                                       precio:'156,39',
+                                       subTotal:'123,45'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       cantidad: 6,
+                                       precio:'156,39',
+                                       subTotal:'123,45'
+                                    },
+                                    
+                                 ],
+                                 datosLocal:[],
+                                datosGuardados:[]
+                            },
+                            methods: {
+                                getDatos(name, precio, width, height, img){
+                                    this.datosLocal.push({
+                                        name:name,
+                                        precio:precio,
+                                        width:width,
+                                        height:height,
+                                        img:img
+                                    })
+                                    console.log(this.datosLocal)
+                                    localStorage.setItem('this.datosLocal', JSON.stringify(this.datosLocal));
+                                    this.getInfo()
+                                },
+                                
+                                getInfo(){
+                                    var guardado = localStorage.getItem('this.datosLocal');
+                                    this.datosGuardados = JSON.parse(guardado) 
+                                    console.log('objetoObtenido: ', this.datosGuardados);
+                                }
+                            },
+                            created() {
+                                this.getInfo()
+                            },
+            })
+        </script>
+</body>
+</html>

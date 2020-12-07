@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="/Nueva carpeta (2)/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/vuesax@4.0.1-alpha.16/dist/vuesax.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&family=Work+Sans:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="normaliza.css">
+    <title>Dreez</title>
+    <style>
+       
+        *{
+            font-family: helvetica;
+        }
+        p{
+            margin:0;
+        }
+        ul{
+            margin: 0;
+            padding: 0;
+        }
+        h1 {
+            margin:0;
+        }
+        h2 {
+            margin:0;
+        }
+        h3 {
+            margin:0;
+        }
+        h4 {
+            margin:0;
+        }
+        h5 {
+            margin:0;
+        }
+        h6 {
+            margin:0;
+        }
+        .swiper-container {
+      width: 100%;
+      height: 100%;
+    }
+
+    .swiper-slide {
+      text-align: center;
+      font-size: 18px;
+      background: #fff;
+
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+    }
+    .barrita{
+    display:none
+}
+@media (max-width:768px) and (min-width: 412px){
+    #menu{
+        display:none
+    }
+    #contenido{
+        margin:0!important;
+    }
+    .input{
+        margin-left: 19rem!important;
+    }
+   .barrita{
+    display:flex;
+    color:#7e7e7e
+    }
+    .cont{
+        max-width: 1700px!important;
+        margin-left: -1remx!important;
+        margin-right: 0rem!important;
+    }
+    .linea{
+        font-size: 50px;
+        margin-right: -1rem;
+        margin-left: 1rem;
+    }
+    .titu{
+        margin-left:1rem!important;
+    }
+    .tarjet{
+        margin-right: 0.5rem!important;
+    }
+
+}
+@media (max-width:411px){
+    #menu{
+        display:none
+    }
+    #contenido{
+        margin:0!important;
+    }
+    .oferta{
+        display:none
+    }
+   .drezz{
+    display:none
+   }
+   .barrita{
+    display:flex;
+    color:#7e7e7e
+    }
+
+    .input{
+        margin-left: 0rem!important;
+        width:33.%!important;
+    
+    }
+    .cont{
+        max-width: 1700px!important;
+        margin-left: -1rem!important;
+        margin-right: 0rem!important;
+
+    }
+    .linea{
+        font-size: 50px;
+        margin-right: -1rem;
+        margin-left: 1rem;
+    }
+    .titu{
+        margin-left:1rem!important;
+    }
+    .tarjet{
+        margin-right: 0.5rem!important;
+    }
+    .menuchik{
+        display:none!important;
+    }
+}
+  </style>
+    </style>
+</head>
+<body>
+    
+<div id="app">
+    <div style="position:fixed; top:0;     z-index: 9999999;     background: #fff; width:100%;">
+        <div style="-webkit-box-shadow: 0px 19px 31px -23px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 19px 31px -23px rgba(0,0,0,0.75);
+            box-shadow: 0px 19px 31px -23px rgba(0,0,0,0.75);
+             height: 3rem;
+            width: 100%;
+            left: 0; top:0; background: #fff; width: 100%;">
+            <div class="cont" style="max-width: 95%; margin-left: 2rem; margin-right: 3rem; position:fixed; top:0;width: 100%; height: 3rem;">
+                <div style="display: flex; justify-content: space-between; align-items:center; height: 100%;">
+                    <div class="input" style="display: flex; align-items:center; width:33.33%">
+                            <div class="barrita" onclick="menusi()">
+                                    <span class="iconify linea" data-icon="jam:menu" data-inline="false"></span>
+                            </div>
+                        <div>
+                            <span class="iconify" style="font-size: 16px;  color:#7e7e7e" data-icon="oi:magnifying-glass" data-inline="false"></span>
+                        </div>        
+                        <div class="mt-2">
+                            <vs-input  placeholder="Buscar Proveedores" v-model="buscar" @keyup.enter="busqueda()" />
+                        </div>
+                    </div> 
+                    <div class="drezz" style="width:33.33%; text-align:center;">
+                        <h1 style="font-family:helvetica; font-size: 20px;">TU TIENDA</h1>
+                    </div>
+                    <div style="width:33.33%;color:#6b6b6b; text-align:end; display: flex; justify-content: flex-end; align-items: center; cursor:pointer;" onclick="document.getElementById('carrito').style.display='block'">
+                        <span class="iconify" style="font-size: 30px; margin-right: 1rem;" data-icon="clarity:shopping-cart-line" data-inline="false"></span>
+                        <p style="margin:0; font-family:helvetica; font-size: 12px;">54 productos</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="menu" style="width: 300px; height: 100%; position: fixed; background-color: #fff;       z-index: -1;  top: 0;
+        padding-top: 7rem; display:none">
+                <div style="margin-left:2rem;">
+                    <h1 style="font-size: 25px; font-family: 'Work Sans', sans-serif;  font-weight: 700; margin-bottom:15px">Filtrar</h1>
+                    <ul>
+                        <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Nuevos productos</li>
+                        <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Televisores</li>
+                        <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Telefonos</li>
+                        <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Comtadoras</li>
+                        <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Smart watch</li>
+                        <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Audifonos</li>
+                        <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Softwara</li>
+                        <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Escritorios</li>
+                    </ul>
+                </div>
+        </div>
+        <div style="-webkit-box-shadow: 0px 19px 31px -22px rgba(0,0,0,0.75);
+        -moz-box-shadow: 0px 19px 31px -22px rgba(0,0,0,0.75);
+        box-shadow: 0px 19px 31px -22px rgba(0,0,0,0.75);
+        height: 3rem;
+        width: 100%;
+        left: 0; top: 3rem;" class="menuchik">
+            <ul style="list-style: none; margin:0; padding: 0; display:flex; justify-content:space-between; align-items: center; font-family:helvetica;width: 100%; max-width: 85%; margin-left: auto; margin-right: auto; height:3rem; font-size: 12px;">
+                <li>Inicio</li>
+                <li>SmartWatch</li>
+                <li>Televisores</li>
+                <li>Computadoras</li>
+                <li>Tablets</li>
+                <li>Accesorios</li>
+                <li>IoT</li>
+
+                <li>Software</li>
+            </ul>
+        </div>
+    </div>
+    <div style="height: 100vh;  width: 100%; display: flex; justify-content: space-between; flex-direction:column; background: #F4F4F4;">
+            <div class="swiper-container">
+                    <div class="swiper-wrapper">
+                      <div class="swiper-slide" style="text-align: start; justify-content: space-around;">
+                          <div>
+                              <div>
+                                    <p style="font-family: helvetica; font-size: 20px;">Exclusivas herramientas</p>
+                                    <h3 style="font-family: galano; font-size: 55px;">Industriales</h3>
+                              </div>
+                              <div>
+                                    <button style="color:#fff; background: #228519; border-radius:0; border:none; padding: 0.7rem 1rem 0.7rem 1rem; font-family:galano; font-size: 15px; margin-top: 2rem; box-shadow: 0px 4px 25px rgba(34, 133, 25, 0.3);">Comprar <span class="iconify" style="margin-left: 1rem; color:#fff; font-size: 22px; margin: 0rem 0 -0.2rem 1rem;" data-icon="eva:arrow-ios-forward-fill" data-inline="false"></span></button>
+                              </div>
+                              
+                          </div>
+                          <img src="assetsPlantillas/2020-09-14_07h30_50 1.png" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                          <img src="assetsPlantillas/2020-09-14_07h30_50 1.png" alt="">
+                      </div>
+                      <div class="swiper-slide">
+                          <img src="assetsPlantillas/2020-09-14_07h30_50 1.png" alt="">
+                      </div>
+                    </div>
+                    <!-- Add Arrows -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                  </div>
+   
+    </div>
+    <div class="menuchik" style="width: 100%;height: 50px; background:#ECECEC; margin-top:0rem; display: flex; justify-content: center; width:100%; ">
+        <img src="assetsPlantillas/2020-09-14_07h31_12 1.png" alt="">
+    </div>
+    <div style="display:flex; justify-content: center; height: 215px; margin-top:3rem; margin-left: 2rem; margin-right: 2rem;">
+        <div style="flex-basis:calc(33% - 1rem); background: #fff; display:flex; align-items: center; padding-left: 2rem;">
+            <img src="assetsPlantillas/service-courier 1.png" alt="">
+        </div>
+        <div style="flex-basis:calc(33% - 1rem); background: #228519; display:flex; align-items: center; padding-left: 2rem;">
+            <img src="assetsPlantillas/img_518129 1.png" alt="">
+        </div>
+        <div style="flex-basis:calc(33% - 1rem); background: #02112B; display:flex; align-items: center; padding-left: 2rem;">
+            <img src="assetsPlantillas/img_503325 1.png" alt="">
+        </div>
+    </div>
+            <div style="width: 100%; margin-bottom: 3rem; margin-top:7rem; max-width: 1300px;
+            margin-left: auto;
+            margin-right: auto;">
+            <h4 style="font-family: 'Work Sans', sans-serif; margin-bottom: 1rem;">Herramientas para el hogar</h4>
+            <div style="display: flex; justify-content: center;">
+            <div style="width: 100%; display: flex; flex-wrap:wrap;  ">
+                    
+                    <div style="height:12rem; flex-basis:calc(16% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                    -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                    box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75); margin-bottom: 1rem;
+                    width: 100%; display:flex; flex-direction: column;  align-items: center; padding: 1rem 0.5rem;  margin-right: 2.5rem;" v-for="tv in televisores " class="tarjet"> 
+                    <div style="width: 100%; display: flex; justify-content: flex-end;     margin-left: 3rem;" @click="getDatos(tv.name, tv.precio, tv.width, tv.height, tv.img)">
+                            <span class="iconify" style="    margin-top: -1.5rem;
+                            background: #fff;
+                            padding: 0.5rem;
+                            border-radius: 50px;     box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                        </div>
+                    <div style="height:11rem; margin-bottom: 0.5rem; display: flex; 
+                    justify-content: center; width: 150px;">
+                            <img :src="tv.img" v-bind:style="{width:tv.width, height:tv.height}" alt="">
+                    </div>
+                           <div style="margin-top: -1.5rem; display: flex;
+                           flex-direction: column;
+                           justify-content: flex-start;
+                           width: 100%;
+                           margin-left: 1rem;">
+                               <p style="margin:0;font-family: helvetica; font-size:12px;">{{tv.name}}</p>
+                               <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">S/.{{tv.precio}}</p>
+                           </div> 
+                    </div>
+                    
+                    </div>
+                </div>
+                </div>
+                <div id="carrito" style="display:none;">
+                        <div style="position: fixed; z-index: 4; height: 400px;  width: 260px; background: rgba(255, 255, 255, 0.77);
+                        box-shadow: 0px 16px 39px rgba(0, 0, 0, 0.09);
+                        backdrop-filter: blur(44px); top: 6rem; right: 3rem; border-radius: 1rem; padding: 1rem; padding-right: 0rem; ">
+                        <div style="height: 350px;overflow: auto;    padding-right: 1rem;">
+                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;" v-for="ele in datosGuardados">
+                                <img :src="ele.img" style="width:15%; flex-basis: calc(20% - 1rem);" alt="">
+                                <p style="margin: 0; font-family: 'Montserrat', sans-serif;  font-size: 11px; flex-basis: calc(50% - 1rem);">{{ele.name}}</p>
+                                <p style="margin: 0; font-family: 'Montserrat', sans-serif;  font-size: 11px; flex-basis: calc(10% - 1rem);">X1</p>
+                            </div>
+                        </div>
+                            <p style="margin: 0; font-family: galano; padding: 1rem; font-size: 15px; flex-basis: calc(50% - 1rem); text-align: end;">S/.65.2</p>
+                        </div>
+                      </div>
+        </div>
+
+    <script src="/Nueva carpeta (2)/bootstrap/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://unpkg.com/vuesax@4.0.1-alpha.16/dist/vuesax.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-resource@1.3.5"></script>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.2/axios.min.js"></script>
+    <script src="https://unpkg.com/vue-select@3.0.0"></script>
+    <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+        <script>
+            const aplicacion = new Vue( {
+                el: '#app',
+                            data: {
+                                todos:[
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/uno.png',
+                                       width:'70%',
+                                       height: '80%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/dos.png',  
+                                       width:'80%',
+                                       height: '70%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/tres.png',
+                                       width:'100%',
+                                       height: '70%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/cuatro.png' ,
+                                       width:'100%',
+                                       height: '90%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/cinco.png',
+                                       width:'80%',
+                                       height: '90%' 
+                                    },
+                                ],
+                                televisores:[
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/tv.png',
+                                       width:'80%',
+                                       height: '60%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/tv.png',  
+                                       width:'80%',
+                                       height: '60%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/tv.png',
+                                       width:'80%',
+                                       height: '60%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/tv.png' ,
+                                       width:'80%',
+                                       height: '60%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/tv.png',
+                                       width:'80%',
+                                       height: '60%' 
+                                    },
+                                     {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/tv.png',  
+                                       width:'80%',
+                                       height: '60%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/tv.png',
+                                       width:'80%',
+                                       height: '60%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/tv.png' ,
+                                       width:'80%',
+                                       height: '60%'
+                                    },
+                                    {
+                                       name:'Dell X4S- 16GBS',
+                                       precio:'156,39',
+                                       img:'assetsPlantillas/tv.png',
+                                       width:'80%',
+                                       height: '60%' 
+                                    },
+                                ],
+                                datosLocal:[],
+                                datosGuardados:[]
+                            },
+                            methods: {
+                                getDatos(name, precio, width, height, img){
+                                    this.datosLocal.push({
+                                        name:name,
+                                        precio:precio,
+                                        width:width,
+                                        height:height,
+                                        img:img
+                                    })
+                                    console.log(this.datosLocal)
+                                    localStorage.setItem('this.datosLocal', JSON.stringify(this.datosLocal));
+                                    this.getInfo()
+                                },
+                                
+                                getInfo(){
+                                    var guardado = localStorage.getItem('this.datosLocal');
+                                    this.datosGuardados = JSON.parse(guardado) 
+                                    console.log('objetoObtenido: ', this.datosGuardados);
+                                   
+                                }
+                            },
+                            created() {
+                                this.getInfo()
+                            },
+            })
+        </script>
+        <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+        <script>
+                var swiper = new Swiper('.swiper-container', {
+                  navigation: {
+                    nextEl: '.swiper-button-next',
+                    prevEl: '.swiper-button-prev',
+                  },
+                });
+              </script>
+              <script>
+                    function menusi(){
+        
+                        let element = document.getElementById('menu');
+                        let elementStyle = window.getComputedStyle(element);
+                        let elementColor = elementStyle.getPropertyValue('display');
+                       console.log(elementColor)
+                       if(elementColor == 'none'){
+                        document.getElementById('menu').style.display='block'
+                       } else if(elementColor == 'block'){
+                        document.getElementById('menu').style.display='none' 
+                       }
+                    }
+                </script>
+</body>
+</html>

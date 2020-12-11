@@ -69,8 +69,8 @@
                         </div>
 
                         <div class="soloAqui" style="margin-top:3rem;" id="mover" >
-                            <div  class="cambio" v-for="item in options" v-on:drag="sortable(), movi(item)" @mousedown="obtener(item), unaVez(item)" v-on:drop="enviar()"  style="display:flex; justify-content: space-between; background:#fff; margin: 0.5rem 0px; padding: 0.5rem;  box-shadow: 0px 1px 14px -8px rgba(126,126,126,1);">
-                                <div style="display:flex; align-items: center;"  v-on:change="movi(item)">
+                            <div   class="cambio" v-for="item in options" v-bind:id="item.id" v-on:drag="sortable()" @mousedown="obtener(item), unaVez(item)" v-on:drop="enviar()"  style="display:flex; justify-content: space-between; background:#fff; margin: 0.5rem 0px; padding: 0.5rem;  box-shadow: 0px 1px 14px -8px rgba(126,126,126,1);">
+                                <div style="display:flex; align-items: center;">
                                     <img :src="item.img" style="width: 25px; margin-right: 1rem;" alt="">
                                     <p style="font-family: helvetica; margin: 0rem; font-size: 15px;">{{item.name}}</p>
                                 </div>
@@ -230,7 +230,11 @@
                                     {
                                         name:'Productos: Celulares',
                                         img: 'SVG NO EMBEBIDO/zanahoria.svg',
-                                        id:4
+                                        id:4,
+                                        html:`<div>
+                                                <img src="assetsPlantillas/2020-09-14_07h31_12 1.png" alt="">
+                                                <h1>Prueba</h1>
+                                            </div>`
                                     },  
                                     {
                                         name:'Pie de página',
@@ -245,7 +249,9 @@
                                 movidoD: [],
                                 movidoU: [],
                                 Cclick: 0,
-                                itemUno:[]
+                                itemUno:[],
+                                anterior:'',
+                                actual:''
                             },
                             methods: {
                                 sortable(){
@@ -255,14 +261,13 @@
                                     var valorMovidoU = localStorage.getItem('movidoUno');
                                     var valorMovidoD = localStorage.getItem('movidoDos');
                                     
-                                    
-
                                     this.init = valorUno
                                     this.fin = valorDos
-                                    this.movidoU = JSON.parse(valorMovidoU)
-                                    this.movidoD = JSON.parse(valorMovidoD)
-
-                                    
+                                    this.movidoU = parseInt(valorMovidoU)
+                                    this.movidoD = parseInt(valorMovidoD)
+                                    this.anterior = this.options[this.movidoD]
+                                    this.actual = this.options[this.movidoU]
+                                    console.log(this.actual)
                                 },
                                 unaVez(itemUnos){
                                     
@@ -284,8 +289,8 @@
                                         init: this.init,
                                         fin: this.fin,
                                         item: this.items,
-                                        movidoU: this.movidoU,
-                                        movidoD: this.movidoD,
+                                        movidoU: this.actual,
+                                        movidoD: this.anterior,
                                         Cclick:this.Cclick
                                     })
                                     var iframe = document.getElementById('my-iframe');
@@ -336,6 +341,7 @@
                                     console.log(evt.related); // HTMLElement on which have guided
                                     var itemU = evt.dragged
                                     var itemD = evt.related
+                                    
                                     var movidoUno = []
                                     var movidoDos = []
                                     
@@ -346,8 +352,9 @@
                                     movidoDos.push(
                                         itemD
                                     )
-                                    localStorage.setItem('movidoUno', JSON.stringify(movidoUno));   
-                                    localStorage.setItem('movidoDos', JSON.stringify(movidoDos)); 
+                                    console.log(movidoDos[0].attributes.id.nodeValue); 
+                                    localStorage.setItem('movidoUno',  (movidoUno[0].attributes.id.nodeValue));   
+                                    localStorage.setItem('movidoDos', (movidoDos[0].attributes.id.nodeValue)); 
                                 },
                                     
                                     });

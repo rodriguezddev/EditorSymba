@@ -282,6 +282,7 @@
             
     </div>
 </div>
+
 <div v-bind:id="ids[2]">
 </div>
  
@@ -323,8 +324,19 @@
                 </div>
     </div>
     </div>
+    
     <div v-bind:id="ids[3]">
     </div>
+
+    <!--Otros productos de prueba-->
+    <div v-bind:id="idsD[4]">
+        <div>
+                <img src="assetsPlantillas/2020-09-14_07h31_12 1.png" alt="">
+                <h1>Prueba</h1>
+        </div>
+    </div>
+    <div v-bind:id="ids[4]"></div>
+
 
 
     <div id="carrito" style="display:none;">
@@ -464,8 +476,8 @@
                                 
                                 datosLocal:[],
                                 datosGuardados:[],
-                                ids: [0, 1, 2, 3], //id para los inner
-                                idsD: [00, 11, 22, 33] //id para los div existentes (hay que modificar)
+                                ids: [0, 1, 2, 3, 4], //id para los inner
+                                idsD: [00, 11, 22, 33, 44] //id para los div existentes (hay que modificar)
                             },
                             methods: {
                                 getDatos(name, precio, width, height, img){
@@ -537,11 +549,13 @@
                                                     for (let i = 0; i < arrayID.length; i++) {
                                                         if(arrayID[i] == entero){
                                                             var vales = idDelaOpcion * 11 //estos valores debo arreglarlos
+                                                            var valeD = idsss * 11
                                                             document.getElementById(vales).style.display='none'
+                                                            document.getElementById(valeD).style.display='block'
                                                             document.getElementById(entero).innerHTML= event.data[j].item.html
                                                             document.getElementById(idsss).innerHTML= ''
                                                             var vale = entero * 11 //estos valores debo arreglarlos
-                                                            document.getElementById(vale).style.display='block'
+                                                            document.getElementById(vale).style.display='none'
                                                             console.log('dos', datoDos, datoUno)
                                                             break
                                                         }
@@ -559,19 +573,22 @@
                                                                 if(idDelaOpcion == 3){
                                                                    
                                                                 var vales = idsss * 11 //estos valores debo arreglarlos
-                                                                    document.getElementById(vales).style.display='block'
+                                                                    document.getElementById(vales).style.display='none'
                                                                     document.getElementById(entero).innerHTML= event.data[j].item.html
-                                                                    document.getElementById(idsss).innerHTML= ''
+                                                                    document.getElementById(idsss).innerHTML= event.data[j].movidoD.html
                                                                     var vale = idDelaOpcion * 11 //estos valores debo arreglarlos
                                                                     document.getElementById(vale).style.display='none'
                                                                     console.log('se cumple 3')
                                                                 } else {
                                                                     var vales = entero * 11 //estos valores debo arreglarlos
-                                                                document.getElementById(vales).style.display='block'
+                                                                document.getElementById(vales).style.display='none'
                                                                 document.getElementById(entero).innerHTML= event.data[j].item.html
-                                                                document.getElementById(idsss).innerHTML= ''
+                                                                document.getElementById(idsss).innerHTML= event.data[j].movidoD.html
                                                                 var vale = idDelaOpcion * 11 //estos valores debo arreglarlos
                                                                 document.getElementById(vale).style.display='none'
+
+                                                                var vales = event.data[j].movidoD.id * 11 //estos valores debo arreglarlos
+                                                                document.getElementById(vales).style.display='none'
                                                                 console.log('no se cumple 3 ')
                                                                 }
                                                                 
@@ -580,13 +597,26 @@
                                                             var valorDelHtml = idGuardado.length - 2
                                                             console.log(idDelaOpcion, event.data)
                                                             
-                                                            var vales = idsss * 11 //estos valores debo arreglarlos
-                                                            document.getElementById(vales).style.display='block'
+                                                            
+                                                            if(idsss == event.data[j].movidoD.id){
+                                                                var vales = idsss * 11 //estos valores debo arreglarlos
+                                                            document.getElementById(vales).style.display='none'
                                                             document.getElementById(entero).innerHTML= event.data[j].item.html
-                                                            document.getElementById(idsss).innerHTML= ''
+                                                            document.getElementById(idsss).innerHTML= event.data[j].movidoD.html
                                                             var vale = idDelaOpcion * 11 //estos valores debo arreglarlos
                                                             document.getElementById(vale).style.display='none'
-                                                            
+                                                            console.log('tres de uno')
+                                                                break
+                                                            } else {
+                                                                var vales = event.data[j].movidoD.id * 11 //estos valores debo arreglarlos
+                                                            document.getElementById(vales).style.display='none'
+                                                            document.getElementById(entero).innerHTML= event.data[j].item.html
+                                                            document.getElementById(idsss).innerHTML= event.data[j].movidoD.html
+                                                            var vale = idDelaOpcion * 11 //estos valores debo arreglarlos
+                                                            document.getElementById(vale).style.display='none'
+                                                            console.log('tres de Dos')
+                                                                break
+                                                            }
                                                             console.log(idDelaOpcion, idGuardado.length - 2)
                                                             console.log('tres', datoDos, datoUno)
 
@@ -599,19 +629,98 @@
                                                 }
                                                 
                                             } else {
-                                                console.log('subio')
-                                                    for (let i = 0; i < arrayID.length; i++) {
-                                                       
+                                                if(idGuardado.length == 1){
+                                                        for (let i = 0; i < arrayID.length; i++) {
                                                         if(arrayID[i] == entero){
-                                                            var vale = idDelaOpcion * 11 //estos valores debo arreglarlos
-                                                            
-                                                            console.log(vale)
-                                                            document.getElementById(vale).style.display='none'
+                                                            var vales = idDelaOpcion * 11 //estos valores debo arreglarlos
+                                                            document.getElementById(vales).style.display='none'
                                                             document.getElementById(entero).innerHTML= event.data[j].item.html
-                                                            document.getElementById(idsss).innerHTML=''
+                                                            document.getElementById(idsss).innerHTML= event.data[j].movidoD.html
+                                                            var vale = entero * 11 //estos valores debo arreglarlos
+                                                            document.getElementById(vale).style.display='none'
+                                                            console.log('uno', datoDos, datoUno)
                                                             break
                                                         }
+                                                    }
+                                                } else  if(idGuardado.length > 1 && idGuardado[0] == idGuardado[idGuardado.length - 1]){
+                                                    for (let i = 0; i < arrayID.length; i++) {
+                                                        if(arrayID[i] == entero){
+                                                            var vales = idDelaOpcion * 11 //estos valores debo arreglarlos
+                                                            document.getElementById(vales).style.display='none'
+                                                            document.getElementById(entero).innerHTML= event.data[j].item.html
+                                                            document.getElementById(idsss).innerHTML= event.data[j].movidoD.html
+                                                            var vale = entero * 11 //estos valores debo arreglarlos
+                                                            document.getElementById(vale).style.display='none'
+                                                            console.log('dos', datoDos, datoUno)
+                                                            break
+                                                        }
+                                                    }
+                                                    
+                                                } else {
+                                                    for (let i = 0; i < arrayID.length; i++) {
+                                                        if(arrayID[i] == entero){
+                                                           var sumar = parseInt(localStorage.getItem('suma'))
+                                                           sumar = sumar + 1
+                                                           localStorage.setItem('suma', sumar)
+                                                           console.log(parseInt(localStorage.getItem('suma')))
 
+                                                           if(parseInt(localStorage.getItem('suma')) >= 4){
+                                                                if(idDelaOpcion == 3){
+                                                                   
+                                                                var vales = idsss * 11 //estos valores debo arreglarlos
+                                                                    document.getElementById(vales).style.display='none'
+                                                                    document.getElementById(entero).innerHTML= event.data[j].item.html
+                                                                    document.getElementById(idsss).innerHTML= event.data[j].movidoD.html
+                                                                    var vale = idDelaOpcion * 11 //estos valores debo arreglarlos
+                                                                    document.getElementById(vale).style.display='none'
+                                                                    console.log('se cumple 3')
+                                                                } else {
+                                                                    var vales = entero * 11 //estos valores debo arreglarlos
+                                                                document.getElementById(vales).style.display='none'
+                                                                document.getElementById(entero).innerHTML= event.data[j].item.html
+                                                                document.getElementById(idsss).innerHTML= event.data[j].movidoD.html
+                                                                var vale = idDelaOpcion * 11 //estos valores debo arreglarlos
+                                                                document.getElementById(vale).style.display='none'
+
+                                                                var vales = event.data[j].movidoD.id * 11 //estos valores debo arreglarlos
+                                                                document.getElementById(vales).style.display='none'
+                                                                console.log('no se cumple 3 ')
+                                                                }
+                                                                
+
+                                                           } else {
+                                                            var valorDelHtml = idGuardado.length - 2
+                                                            console.log(idDelaOpcion, event.data)
+                                                            
+                                                            
+                                                            if(idsss == event.data[j].movidoD.id){
+                                                                var vales = idsss * 11 //estos valores debo arreglarlos
+                                                            document.getElementById(vales).style.display='none'
+                                                            document.getElementById(entero).innerHTML= event.data[j].item.html
+                                                            document.getElementById(idsss).innerHTML= event.data[j].movidoD.html
+                                                            var vale = idDelaOpcion * 11 //estos valores debo arreglarlos
+                                                            document.getElementById(vale).style.display='none'
+                                                            console.log('tres de uno')
+                                                                break
+                                                            } else {
+                                                                var vales = event.data[j].movidoD.id * 11 //estos valores debo arreglarlos
+                                                            document.getElementById(vales).style.display='none'
+                                                            document.getElementById(entero).innerHTML= event.data[j].item.html
+                                                            document.getElementById(idsss).innerHTML= event.data[j].movidoD.html
+                                                            var vale = idDelaOpcion * 11 //estos valores debo arreglarlos
+                                                            document.getElementById(vale).style.display='none'
+                                                            console.log('tres de Dos')
+                                                                break
+                                                            }
+                                                            console.log(idDelaOpcion, idGuardado.length - 2)
+                                                            console.log('tres', datoDos, datoUno)
+
+                                                           }
+                                                            
+                                                            break
+                                                        }
+                                                    }
+                                                    
                                                 }
                                             }
 

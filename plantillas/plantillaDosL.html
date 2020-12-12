@@ -137,224 +137,14 @@
 <body>
     
 <div id="app">
- <!--Menu-->
- <div v-bind:id="idsD[0]">
-    <div style="position:fixed; top:0;     z-index: 9;     background-color: #fff; width: 100%;" id="my-message" >
-        <div id="menus" onclick="camb()" style="width: 99.4%; height: 6rem;">
-            <div class="cont" style="display: flex; justify-content: space-between; align-items:center; position:fixed; top:10px; padding:0 1rem; width: 96%; height: 3rem; -webkit-box-shadow: 0px 19px 31px -23px rgba(0,0,0,0.75); -moz-box-shadow: 0px 19px 31px -23px rgba(0,0,0,0.75); box-shadow: 0px 19px 31px -23px rgba(0,0,0,0.75);">
-                    
-                            <div class="barrita"  onclick="menusi()">
-                                    <span class="iconify linea" data-icon="jam:menu" data-inline="false"></span>
-                            </div>
-                        <div class="input"  style="display: flex; align-items:center; ">
-                            <div>
-                                <span class="iconify" style="font-size: 16px;  color:#7e7e7e" data-icon="oi:magnifying-glass" data-inline="false"></span>
-                            </div>        
-                            <div class="mt-2">
-                                <vs-input  placeholder="Buscar Proveedores" v-model="buscar" @keyup.enter="busqueda()" />
-                            </div>
-                        </div> 
-                        <div class="drezz" style=" text-align:center;">
-                            <h1 style="font-family:helvetica; font-size: 20px;">TU TIENDA</h1>
-                        </div>
-                        <div style="color:#6b6b6b; text-align:end; display: flex; justify-content: flex-end; align-items: center; cursor:pointer;" onclick="document.getElementById('carrito').style.display='block'">
-                            <span class="iconify" style="font-size: 30px; margin-right: 1rem;" data-icon="clarity:shopping-cart-line" data-inline="false"></span>
-                            <p style="margin:0; font-family:helvetica; font-size: 12px;">54 productos</p>
-                        </div>
-            </div>
-        
-            <div style="-webkit-box-shadow: 0px 19px 31px -22px rgba(0, 0, 0, 0.75);position: fixed;
-        -moz-box-shadow: 0px 19px 31px -22px rgba(0,0,0,0.75);
-        box-shadow: 0px 19px 31px -22px rgba(0,0,0,0.75);
-        height: 3rem;
-        width: 100%;
-        left: 0; top: 3rem;" id="menuchik">
-            <ul style="list-style: none; margin:0; padding: 0; display:flex; justify-content:space-between; align-items: center; font-family:helvetica;width: 100%; max-width: 85%; margin-left: auto; margin-right: auto; height:3rem; font-size: 12px;">
-                <li>Inicio</li>
-                <li>SmartWatch</li>
-                <li>Televisores</li>
-                <li>Computadoras</li>
-                <li>Tablets</li>
-                <li>Accesorios</li>
-                <li>IoT</li>
 
-                <li>Software</li>
-            </ul>
-            </div>
-        </div>
-    </div>
- </div>
-    
-    <div v-bind:id="ids[0]">
-    </div>  
-       
-<!--Headaer-->
-<div v-bind:id="ids[1]">
-</div>
-    <div v-bind:id="idsD[1]">
-        <div class="hea" id="carru" style="height: 80vh; margin-top: 6rem; max-width: 1300px;
-    margin-left: auto;
-    margin-right: auto; display: flex; justify-content: space-between; flex-direction:column;" id="header" onclick="header()">
-        <div style="width: 100%;     align-items: center; display: flex; justify-content: space-between; height:100%;">
-        <div style="margin-left: 5rem;">
-                <div>
-                    <h2 style="font-family: 'Montserrat', sans-serif; letter-spacing: 7px;
-                    font-style: normal;
-                    font-weight: normal;
-                    font-size: 28px;
-                    line-height: 35px;">Descuento</h2>
-                </div>
-                <div>
-                    <h1 style="     font-weight: 800;
-                    font-size: 50px;">2x1 Apple watch</h1>
-                    <p style="font-family:helvetica; margin:0; font-size:14px; margin-top:5px;">Oferta solo displonible de 24 de octubre al 25 de diciembre</p>
-                </div>
-                <div>
-                    <button style="background:#000; color:#fff;border-radius:0; border:none; padding: 0.5rem 3rem; font-family:helvetica;    font-size: 12px; margin-top: 2.5rem;">Comprar</button>
-                </div>
-                <div style="display: flex; position: absolute; width:10%;justify-content: space-between; margin-left: 2rem; margin-top: 8rem;">
-                        <div style="width:20px; height:10px; background: #e7e7e7; border-radius: 2rem;"></div>
-                        <div style="width:40px; height:10px; background: #000000; border-radius: 2rem;"></div>
-                        <div style="width:20px; height:10px; background: #e7e7e7; border-radius: 2rem;"></div>
-                        <div style="width:20px; height:10px; background: #e7e7e7; border-radius: 2rem;"></div>
-                    </div>
-        </div>
-        <div class="reloj" style="background:#F4F7F8; height: 80%; display: flex; justify-content: center; align-items: center; width: 30%;padding-top:5rem; 
-        margin-right: 12rem;">
-            <img src="assetsPlantillas/reloj1.png" style="position: absolute; margin-left: -5rem;" alt="">
-            <img src="assetsPlantillas/reloj2.png" style="margin-top: -16rem; margin-left: 4rem;" alt="">
-        </div>
-    </div>
-   
-    </div>
-    </div>
-    
-    
-    <div>
-           
-            <div id="menu" style="width: 300px; height: 100%; position: fixed; background-color: #fff;     top: 0;
-            padding-top: 7rem; display:none">
-                    <div style="margin-left:2rem;">
-                        <h1 style="font-size: 25px; font-family: 'Work Sans', sans-serif;  font-weight: 700; margin-bottom:15px">Filtrar</h1>
-                        <ul>
-                            <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Nuevos productos</li>
-                            <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Televisores</li>
-                            <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Telefonos</li>
-                            <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Comtadoras</li>
-                            <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Smart watch</li>
-                            <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Audifonos</li>
-                            <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Softwara</li>
-                            <li style="list-style: none; font-family: helvetica; font-size: 12px; margin-bottom:15px">Escritorios</li>
-                        </ul>
-                    </div>
-            </div>
-    </div>
-
-<!--Productos destacados-->
-
-<div v-bind:id="idsD[2]">
-    <div id="barrita" style="width: 100%;height: 150px; background:#F4F7F8; "></div>
-    <div class="reloj" id="produc" onclick="productos()" style="margin: -7rem 0rem 0rem;    padding: 1rem; display: flex; justify-content: space-around;  max-width: 1300px;">
-
-            <div style="height:12rem; flex-basis:calc(20% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
-            -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
-            box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
-            width: 100%; display:flex; flex-direction: column; align-items: center; padding: 1rem 0.5rem; " v-for="todo in todos "> 
-            <div style="width: 100%; display: flex; justify-content: flex-end;     margin-left: 3rem;">
-                <span class="iconify" style="    margin-top: -1.5rem;
-                background: #fff;
-                padding: 0.5rem;
-                border-radius: 50px;     box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
-            </div>
-            <div style="height:11rem; margin-bottom: 0.5rem; display: flex; 
-            justify-content: center; width: 150px;">
-                    <img :src="todo.img" v-bind:style="{width:todo.width, height:todo.height}" alt="">
-            </div>
-                   <div style="margin-top: -1.5rem; display: flex;
-                   flex-direction: column;
-                   justify-content: flex-start;
-                   width: 100%;
-                   margin-left: 1rem;">
-                       <p style="margin:0;font-family: helvetica; font-size:12px;">{{todo.name}}</p>
-                       <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">S/.{{todo.precio}}</p>
-                   </div> 
-            </div>
-            
-    </div>
+<div v-for="item in datosDelEditable">
+    <div v-html="item.html"></div>
 </div>
 
-<div v-bind:id="ids[2]">
-</div>
+
  
-
-    <!--Demas nproductos-->
-    <div v-bind:id="idsD[3]">
-        <div  id="demasProd" onclick="demasProd()" style="padding: 1rem; margin-bottom: 3rem; margin-top:3rem; max-width: 1300px;
-            margin-left: auto;
-            margin-right: auto; ">
-            <h4 style="font-family: 'Work Sans', sans-serif; margin-bottom: 1rem;">Televisores</h4>
-            <div style="display: flex; justify-content: center;">
-            <div style="width: 100%; display: flex; flex-wrap:wrap;  ">
-                    
-                    <div style="height:12rem; flex-basis:calc(16% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
-                    -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
-                    box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75); margin-bottom: 1rem;
-                    width: 100%; display:flex; flex-direction: column;  align-items: center; padding: 1rem 0.5rem;  margin-right: 2.5rem;" class="tarjet" v-for="tv in televisores "> 
-                    <div style="width: 100%; display: flex; justify-content: flex-end;     margin-left: 3rem;"  @click="getDatos(tv.name, tv.precio, tv.width, tv.height, tv.img)">
-                            <span class="iconify" style="    margin-top: -1.5rem;
-                            background: #fff;
-                            padding: 0.5rem;
-                            border-radius: 50px;     box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
-                        </div>
-                    <div style="height:11rem; margin-bottom: 0.5rem; display: flex; 
-                    justify-content: center; width: 150px;">
-                            <img :src="tv.img" v-bind:style="{width:tv.width, height:tv.height}" alt="">
-                    </div>
-                           <div style="margin-top: -1.5rem; display: flex;
-                           flex-direction: column;
-                           justify-content: flex-start;
-                           width: 100%;
-                           margin-left: 1rem;">
-                               <p style="margin:0;font-family: helvetica; font-size:12px;">{{tv.name}}</p>
-                               <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">S/.{{tv.precio}}</p>
-                           </div> 
-                    </div>
-                    
-                    </div>
-                </div>
-    </div>
-    </div>
-    
-    <div v-bind:id="ids[3]">
-    </div>
-
-    <!--Otros productos de prueba-->
-    <div v-bind:id="idsD[4]">
-        <div>
-                <img src="assetsPlantillas/2020-09-14_07h31_12 1.png" alt="">
-                <h1>Prueba</h1>
-        </div>
-    </div>
-    <div v-bind:id="ids[4]"></div>
-
-
-
-    <div id="carrito" style="display:none;">
-                        <div style="position: fixed; z-index: 4; height: 400px;  width: 260px; background: rgba(255, 255, 255, 0.77);
-                        box-shadow: 0px 16px 39px rgba(0, 0, 0, 0.09);
-                        backdrop-filter: blur(44px); top: 6rem; right: 3rem; border-radius: 1rem; padding: 1rem; padding-right: 0rem; ">
-                        <div style="height: 350px;overflow: auto;    padding-right: 1rem;">
-                            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;" v-for="ele in datosGuardados">
-                                <img :src="ele.img" style="width:15%; flex-basis: calc(20% - 1rem);" alt="">
-                                <p style="margin: 0; font-family: 'Montserrat', sans-serif;  font-size: 11px; flex-basis: calc(50% - 1rem);">{{ele.name}}</p>
-                                <p style="margin: 0; font-family: 'Montserrat', sans-serif;  font-size: 11px; flex-basis: calc(10% - 1rem);">X1</p>
-                            </div>
-                        </div>
-                            <p style="margin: 0; font-family: galano; padding: 1rem; font-size: 15px; flex-basis: calc(50% - 1rem); text-align: end;">S/.65.2</p>
-                        </div>
-                                
-    </div>
-        </div>
+</div>
 
     <script src="/Nueva carpeta (2)/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://unpkg.com/vue/dist/vue.js"></script>
@@ -371,6 +161,7 @@
             const aplicacion = new Vue( {
                 el: '#app',
                             data: {
+                                datosDelEditable:[],
                                 todos:[
                                     {
                                        name:'Dell X4S- 16GBS',
@@ -506,11 +297,25 @@
                                localStorage.setItem('valorD', JSON.stringify(this.idsD))
                                localStorage.setItem('suma', suma)
                                
+                               var that = this
+
                                 window.addEventListener('message', function(event) {
                                 console.log(event.data)
-                                var x = event.data
-                                var y = x 
-                                console.log(y)
+                                that.datosDelEditable = event.data
+
+                                }, false)
+
+                                
+                                
+                            
+
+
+
+                                /*window.addEventListener('message', function(event) {
+                                console.log(event.data)
+                                
+                                localStorage.setItem('datosDelEditable', JSON.stringify(event.data))
+
                                 var valores = localStorage.getItem('valor')
                                 var arrayID = JSON.parse(valores)
 
@@ -551,9 +356,8 @@
                                                             var vales = idDelaOpcion * 11 //estos valores debo arreglarlos
                                                             var valeD = idsss * 11
                                                             document.getElementById(vales).style.display='none'
-                                                            document.getElementById(valeD).style.display='block'
                                                             document.getElementById(entero).innerHTML= event.data[j].item.html
-                                                            document.getElementById(idsss).innerHTML= ''
+                                                            document.getElementById(idsss).innerHTML= event.data[j].movidoD.html
                                                             var vale = entero * 11 //estos valores debo arreglarlos
                                                             document.getElementById(vale).style.display='none'
                                                             console.log('dos', datoDos, datoUno)
@@ -782,7 +586,7 @@
 
                                                 }
                                             }
-                                        }*/
+                                        }
                                     
                                         
                                        //La primera vez que se mueve una opcion y si se mueve la misma mas de una vez
@@ -793,7 +597,9 @@
                                         datoUno = localStorage.setItem('valorsillo', JSON.stringify(datoDelArray))
                                     }
 
-                            }, false);
+                            }, false);*/
+
+                           
                             },
             })
         </script>

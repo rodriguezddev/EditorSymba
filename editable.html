@@ -25,6 +25,9 @@
             .bordes{
                 border-left:1px solid blue;
             }
+            .catalogo{
+                display:none
+            }
         </style>
     </head>
     <h1 id="aparece" style="display:none">En celular no puede crear su página :/ si desea ver como queda ingrese a su tienda virtual desde un celular</h1>
@@ -68,15 +71,20 @@
                             <p style="font-family: helvetica; margin: 0rem; font-size: 12px;">Secciones</p>
                         </div>
 
-                        <div class="soloAqui" style="margin-top:3rem;" id="mover" >
-                            <div   class="cambio" v-for="item in optionsSortable" v-bind:id="item.id" v-on:drop="nuevoOrden(item.id)"  style="display:flex; justify-content: space-between; background:#fff; margin: 0.5rem 0px; padding: 0.5rem;  box-shadow: 0px 1px 14px -8px rgba(126,126,126,1);">
-                                <div style="display:flex; align-items: center;">
-                                    <img :src="item.img" style="width: 25px; margin-right: 1rem;" alt="">
-                                    <p style="font-family: helvetica; margin: 0rem; font-size: 15px;">{{item.name}}</p>
+                        <div class="soloAqui" style="margin-top:3rem;" id="mover">
+                            <div class="mover"  v-for="item in optionsSortable" v-bind:id="item.id" v-on:drop="nuevoOrden(item.id)" @click="acordeon(item.catalog)" >
+                                <div  class="cambio"  style="display:flex; justify-content: space-between; background:#fff; margin: 0.5rem 0px; padding: 0.5rem;  box-shadow: 0px 1px 14px -8px rgba(126,126,126,1);">
+                                    <div style="display:flex; align-items: center;">
+                                        <img :src="item.img" style="width: 25px; margin-right: 1rem;" alt="">
+                                        <p style="font-family: helvetica; margin: 0rem; font-size: 15px;">{{item.name}}</p>
+                                    </div>
+                                    <div style="display:flex; align-items: center;">
+                                        <img src="SVG NO EMBEBIDO/visible 3.svg" style="width: 25px; margin-right: 1rem;" alt="">
+                                        <img src="SVG NO EMBEBIDO/circulos.png" style="width:20px" alt="">
+                                    </div>
                                 </div>
-                                <div style="display:flex; align-items: center;">
-                                    <img src="SVG NO EMBEBIDO/visible 3.svg" style="width: 25px; margin-right: 1rem;" alt="">
-                                    <img src="SVG NO EMBEBIDO/circulos.png" style="width:20px" alt="">
+                                <div  class="catalogo">
+                                        {{item.catalog}}
                                 </div>
                             </div>
                         </div>
@@ -114,33 +122,38 @@
                                     {
                                         name:'Menu',
                                         img: 'SVG NO EMBEBIDO/lista 1.svg',
-                                        id:0
+                                        id:0,
+                                        catalog:'PruebaUno'
                                     },
                                     {
                                         name:'Slider de imagenes',
                                         img: 'SVG NO EMBEBIDO/imagen 1.svg',
                                         id:1,
+                                        catalog:'PruebaDos'
                                     },
                                     {
                                         name:'Productos destacados',
                                         img: 'SVG NO EMBEBIDO/zapatos 1.svg',
                                         id:2,
+                                        catalog:'PruebaTres'
                                     },
                                     {
                                         name:'Productos: Televisores',
                                         img: 'SVG NO EMBEBIDO/zanahoria.svg',
                                         id:3,
+                                        catalog:'PruebaCuatro'
                                     },
                                     {
                                         name:'Productos: Celulares',
                                         img: 'SVG NO EMBEBIDO/zanahoria.svg',
                                         id:4,
-                                       
+                                        catalog:'PruebaCinco'
                                     },
                                     {
                                         name:'Pie de página',
                                         img: 'SVG NO EMBEBIDO/pie-de-pagina 1.svg',
                                         id:5,
+                                        catalog:'PruebaSeis'
                                     }
                                 ],
                                 options:[
@@ -238,41 +251,135 @@
                                     {
                                         id:2,
                                         html: `<div style="width: 100%;height: 150px; background:#F4F7F8; "></div>
-                                             <div class="reloj"  onclick="productos()" style="margin: -7rem 0rem 0rem;    padding: 1rem; display: flex; justify-content: space-around;  max-width: 1300px;">
+                                             <div  class="reloj vue"   onclick="productos()" style="margin: -7rem 0rem 0rem;    padding: 1rem; display: none; justify-content: space-around;  max-width: 1300px;">
                                                 <div style="height:12rem; flex-basis:calc(20% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
                                                 -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
                                                 box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
                                                 width: 100%; display:flex; flex-direction: column; align-items: center; padding: 1rem 0.5rem; " v-for="todo in todos "> 
                                                 <div style="width: 100%; display: flex; justify-content: flex-end;     margin-left: 3rem;">
-                                                    <span class="iconify" style="    margin-top: -1.5rem;
+                                                    <span class="iconify" style=" margin-top: -1.5rem;
                                                     background: #fff;
                                                     padding: 0.5rem;
-                                                    border-radius: 50px;     box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                                                    border-radius: 50px;  box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
                                                 </div>
-                                                <div style="height:11rem; margin-bottom: 0.5rem; display: flex; 
-                                                justify-content: center; width: 150px;">
+                                                <div style="height:11rem; margin-bottom: 0.5rem; display: flex; justify-content: center; width: 150px;">
                                                         <img :src="todo.img" v-bind:style="{width:todo.width, height:todo.height}" alt="">
                                                 </div>
-                                                    <div style="margin-top: -1.5rem; display: flex;
-                                                    flex-direction: column;
-                                                    justify-content: flex-start;
-                                                    width: 100%;
-                                                    margin-left: 1rem;">
+                                                    <div style="margin-top: -1.5rem; display: flex; flex-direction: column; justify-content: flex-start; width: 100%;margin-left: 1rem;">
                                                         <p style="margin:0;font-family: helvetica; font-size:12px;">{{todo.name}}</p>
                                                         <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">S/.{{todo.precio}}</p>
                                                     </div> 
                                                 </div>
-                                                </div> `
+                                                </div> 
+                                                
+                                                <div class="reloj"  onclick="productos()" style="margin: -7rem 0rem 0rem;    padding: 1rem; display: flex; justify-content: space-around;  max-width: 1300px;">
+
+                                                <div style="height:12rem; flex-basis:calc(20% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                width: 100%; display:flex; flex-direction: column; align-items: center; padding: 1rem 0.5rem;">
+
+                                                <div style="width: 100%; display: flex; justify-content: flex-end; margin-left: 3rem;">
+                                                    <span class="iconify" style="margin-top: -1.5rem; background: #fff; padding: 0.5rem;border-radius: 50px;  box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                                                </div>
+
+                                                <div style="height:9rem; margin-bottom: 0.5rem; display: flex; justify-content: center; width: 150px;">
+                                                        <img src="assetsPlantillas/uno.png" style="width:70%, height:80%" alt="">
+                                                </div>
+
+                                                    <div style=" display: flex; flex-direction: column; justify-content: flex-start;  width: 100%; margin-left: 1rem;">
+                                                        <p style="margin:0;font-family: helvetica; font-size:12px;">Dell X4S- 16GBS</p>
+                                                        <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">156,39</p>
+                                                    </div> 
+                                                </div>
+
+
+                                                <div style="height:12rem; flex-basis:calc(20% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                width: 100%; display:flex; flex-direction: column; align-items: center; padding: 1rem 0.5rem;">
+
+                                                <div style="width: 100%; display: flex; justify-content: flex-end; margin-left: 3rem;">
+                                                    <span class="iconify" style="margin-top: -1.5rem; background: #fff; padding: 0.5rem;border-radius: 50px;  box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                                                </div>
+
+                                                <div style="height:9rem; margin-bottom: 0.5rem; display: flex; justify-content: center; width: 150px;">
+                                                        <img src="assetsPlantillas/dos.png" style="width:70%, height:80%" alt="">
+                                                </div>
+
+                                                    <div style=" display: flex; flex-direction: column; justify-content: flex-start;  width: 100%; margin-left: 1rem;">
+                                                        <p style="margin:0;font-family: helvetica; font-size:12px;">Dell X4S- 16GBS</p>
+                                                        <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">156,39</p>
+                                                    </div> 
+                                                </div>
+
+                                                <div style="height:12rem; flex-basis:calc(20% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                width: 100%; display:flex; flex-direction: column; align-items: center; padding: 1rem 0.5rem;">
+
+                                                <div style="width: 100%; display: flex; justify-content: flex-end; margin-left: 3rem;">
+                                                    <span class="iconify" style="margin-top: -1.5rem; background: #fff; padding: 0.5rem;border-radius: 50px;  box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                                                </div>
+
+                                                <div style="height:9rem; margin-bottom: 0.5rem; display: flex; justify-content: center; width: 150px;">
+                                                        <img src="assetsPlantillas/tres.png" style="width:70%, height:80%" alt="">
+                                                </div>
+
+                                                    <div style=" display: flex; flex-direction: column; justify-content: flex-start;  width: 100%; margin-left: 1rem;">
+                                                        <p style="margin:0;font-family: helvetica; font-size:12px;">Dell X4S- 16GBS</p>
+                                                        <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">156,39</p>
+                                                    </div> 
+                                                </div>
+
+                                                <div style="height:12rem; flex-basis:calc(20% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                width: 100%; display:flex; flex-direction: column; align-items: center; padding: 1rem 0.5rem;">
+
+                                                <div style="width: 100%; display: flex; justify-content: flex-end; margin-left: 3rem;">
+                                                    <span class="iconify" style="margin-top: -1.5rem; background: #fff; padding: 0.5rem;border-radius: 50px;  box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                                                </div>
+
+                                                <div style="height:9rem; margin-bottom: 0.5rem; display: flex; justify-content: center; width: 150px;">
+                                                        <img src="assetsPlantillas/cuatro.png" style="width:70%, height:80%" alt="">
+                                                </div>
+
+                                                    <div style=" display: flex; flex-direction: column; justify-content: flex-start;  width: 100%; margin-left: 1rem;">
+                                                        <p style="margin:0;font-family: helvetica; font-size:12px;">Dell X4S- 16GBS</p>
+                                                        <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">156,39</p>
+                                                    </div> 
+                                                </div>
+
+                                                <div style="height:12rem; flex-basis:calc(20% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                width: 100%; display:flex; flex-direction: column; align-items: center; padding: 1rem 0.5rem;">
+
+                                                <div style="width: 100%; display: flex; justify-content: flex-end; margin-left: 3rem;">
+                                                    <span class="iconify" style="margin-top: -1.5rem; background: #fff; padding: 0.5rem;border-radius: 50px;  box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                                                </div>
+
+                                                <div style="height:9rem; margin-bottom: 0.5rem; display: flex; justify-content: center; width: 150px;">
+                                                        <img src="assetsPlantillas/cinco.png" style="width:70%, height:80%" alt="">
+                                                </div>
+
+                                                    <div style=" display: flex; flex-direction: column; justify-content: flex-start;  width: 100%; margin-left: 1rem;">
+                                                        <p style="margin:0;font-family: helvetica; font-size:12px;">Dell X4S- 16GBS</p>
+                                                        <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">156,39</p>
+                                                    </div> 
+                                                </div>
+                                                </div>`
                                     },
                                     {
                                         
                                         id:3,
                                         html:`<div  onclick="demasProd()" style="padding: 1rem; margin-bottom: 3rem; margin-top:3rem; max-width: 1300px;
                                                         margin-left: auto;
-                                                        margin-right: auto; ">
+                                                        margin-right: auto; display: none;">
                                                         <h4 style="font-family: 'Work Sans', sans-serif; margin-bottom: 1rem;">Televisores</h4>
                                                         <div style="display: flex; justify-content: center;">
-                                                        <div style="width: 100%; display: flex; flex-wrap:wrap;  ">
+                                                        <div style="width: 100%; display: none; flex-wrap:wrap;  ">
                                                                 
                                                                 <div style="height:12rem; flex-basis:calc(16% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
                                                                 -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
@@ -295,6 +402,193 @@
                                                                     margin-left: 1rem;">
                                                                         <p style="margin:0;font-family: helvetica; font-size:12px;">{{tv.name}}</p>
                                                                         <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">S/.{{tv.precio}}</p>
+                                                                    </div> 
+                                                                </div>
+                                                                
+                                                                </div>
+                                                            </div>
+                                                            </div>
+                                                            
+                                                            <div  onclick="demasProd()" style="padding: 1rem; margin-bottom: 3rem; margin-top:3rem; max-width: 1300px;
+                                                        margin-left: auto;
+                                                        margin-right: auto; ">
+                                                        <h4 style="font-family: 'Work Sans', sans-serif; margin-bottom: 1rem;">Televisores</h4>
+                                                        <div style="display: flex; justify-content: center;">
+                                                        <div style="width: 100%; display: flex; flex-wrap:wrap;  ">
+                                                                
+                                                                <div style="height:12rem; flex-basis:calc(16% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75); margin-bottom: 1rem;
+                                                                width: 100%; display:flex; flex-direction: column;  align-items: center; padding: 1rem 0.5rem;  margin-right: 2.5rem;" class="tarjet"> 
+                                                                    <div style="width: 100%; display: flex; justify-content: flex-end;     margin-left: 3rem;">
+                                                                        <span class="iconify" style="    margin-top: -1.5rem; background: #fff; padding: 0.5rem; border-radius: 50px; box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                                                                    </div>
+                                                                <div style="height:9rem; margin-bottom: 0.5rem; display: flex; justify-content: center; width: 150px;">
+                                                                        <img src="assetsPlantillas/tv.png" style="width:80%, height:60%" alt="">
+                                                                </div>
+                                                                    <div style=" display: flex; flex-direction: column; justify-content: flex-start; width: 100%; margin-left: 1rem;">
+                                                                        <p style="margin:0;font-family: helvetica; font-size:12px;">Dell X4S- 16GBS/p>
+                                                                        <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">S/.156,39</p>
+                                                                    </div> 
+                                                                </div>
+
+                                                                <div style="height:12rem; flex-basis:calc(16% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75); margin-bottom: 1rem;
+                                                                width: 100%; display:flex; flex-direction: column;  align-items: center; padding: 1rem 0.5rem;  margin-right: 2.5rem;" class="tarjet"> 
+                                                                    <div style="width: 100%; display: flex; justify-content: flex-end;     margin-left: 3rem;">
+                                                                        <span class="iconify" style="    margin-top: -1.5rem; background: #fff; padding: 0.5rem; border-radius: 50px; box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                                                                    </div>
+                                                                <div style="height:9rem; margin-bottom: 0.5rem; display: flex; justify-content: center; width: 150px;">
+                                                                        <img src="assetsPlantillas/tv.png" style="width:80%, height:60%" alt="">
+                                                                </div>
+                                                                    <div style=" display: flex; flex-direction: column; justify-content: flex-start; width: 100%; margin-left: 1rem;">
+                                                                        <p style="margin:0;font-family: helvetica; font-size:12px;">Dell X4S- 16GBS/p>
+                                                                        <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">S/.156,39</p>
+                                                                    </div> 
+                                                                </div>
+
+                                                                <div style="height:12rem; flex-basis:calc(16% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75); margin-bottom: 1rem;
+                                                                width: 100%; display:flex; flex-direction: column;  align-items: center; padding: 1rem 0.5rem;  margin-right: 2.5rem;" class="tarjet"> 
+                                                                    <div style="width: 100%; display: flex; justify-content: flex-end;     margin-left: 3rem;">
+                                                                        <span class="iconify" style="    margin-top: -1.5rem; background: #fff; padding: 0.5rem; border-radius: 50px; box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                                                                    </div>
+                                                                <div style="height:9rem; margin-bottom: 0.5rem; display: flex; justify-content: center; width: 150px;">
+                                                                        <img src="assetsPlantillas/tv.png" style="width:80%, height:60%" alt="">
+                                                                </div>
+                                                                    <div style=" display: flex; flex-direction: column; justify-content: flex-start; width: 100%; margin-left: 1rem;">
+                                                                        <p style="margin:0;font-family: helvetica; font-size:12px;">Dell X4S- 16GBS/p>
+                                                                        <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">S/.156,39</p>
+                                                                    </div> 
+                                                                </div>
+
+                                                                <div style="height:12rem; flex-basis:calc(16% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75); margin-bottom: 1rem;
+                                                                width: 100%; display:flex; flex-direction: column;  align-items: center; padding: 1rem 0.5rem;  margin-right: 2.5rem;" class="tarjet"> 
+                                                                    <div style="width: 100%; display: flex; justify-content: flex-end;     margin-left: 3rem;">
+                                                                        <span class="iconify" style="    margin-top: -1.5rem; background: #fff; padding: 0.5rem; border-radius: 50px; box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                                                                    </div>
+                                                                <div style="height:9rem; margin-bottom: 0.5rem; display: flex; justify-content: center; width: 150px;">
+                                                                        <img src="assetsPlantillas/tv.png" style="width:80%, height:60%" alt="">
+                                                                </div>
+                                                                    <div style=" display: flex; flex-direction: column; justify-content: flex-start; width: 100%; margin-left: 1rem;">
+                                                                        <p style="margin:0;font-family: helvetica; font-size:12px;">Dell X4S- 16GBS/p>
+                                                                        <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">S/.156,39</p>
+                                                                    </div> 
+                                                                </div>
+
+                                                                <div style="height:12rem; flex-basis:calc(16% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75); margin-bottom: 1rem;
+                                                                width: 100%; display:flex; flex-direction: column;  align-items: center; padding: 1rem 0.5rem;  margin-right: 2.5rem;" class="tarjet"> 
+                                                                    <div style="width: 100%; display: flex; justify-content: flex-end;     margin-left: 3rem;">
+                                                                        <span class="iconify" style="    margin-top: -1.5rem; background: #fff; padding: 0.5rem; border-radius: 50px; box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                                                                    </div>
+                                                                <div style="height:9rem; margin-bottom: 0.5rem; display: flex; justify-content: center; width: 150px;">
+                                                                        <img src="assetsPlantillas/tv.png" style="width:80%, height:60%" alt="">
+                                                                </div>
+                                                                    <div style=" display: flex; flex-direction: column; justify-content: flex-start; width: 100%; margin-left: 1rem;">
+                                                                        <p style="margin:0;font-family: helvetica; font-size:12px;">Dell X4S- 16GBS/p>
+                                                                        <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">S/.156,39</p>
+                                                                    </div> 
+                                                                </div>
+
+                                                                <div style="height:12rem; flex-basis:calc(16% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75); margin-bottom: 1rem;
+                                                                width: 100%; display:flex; flex-direction: column;  align-items: center; padding: 1rem 0.5rem;  margin-right: 2.5rem;" class="tarjet"> 
+                                                                    <div style="width: 100%; display: flex; justify-content: flex-end;     margin-left: 3rem;">
+                                                                        <span class="iconify" style="    margin-top: -1.5rem; background: #fff; padding: 0.5rem; border-radius: 50px; box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                                                                    </div>
+                                                                <div style="height:9rem; margin-bottom: 0.5rem; display: flex; justify-content: center; width: 150px;">
+                                                                        <img src="assetsPlantillas/tv.png" style="width:80%, height:60%" alt="">
+                                                                </div>
+                                                                    <div style=" display: flex; flex-direction: column; justify-content: flex-start; width: 100%; margin-left: 1rem;">
+                                                                        <p style="margin:0;font-family: helvetica; font-size:12px;">Dell X4S- 16GBS/p>
+                                                                        <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">S/.156,39</p>
+                                                                    </div> 
+                                                                </div>
+
+                                                                <div style="height:12rem; flex-basis:calc(16% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75); margin-bottom: 1rem;
+                                                                width: 100%; display:flex; flex-direction: column;  align-items: center; padding: 1rem 0.5rem;  margin-right: 2.5rem;" class="tarjet"> 
+                                                                    <div style="width: 100%; display: flex; justify-content: flex-end;     margin-left: 3rem;">
+                                                                        <span class="iconify" style="    margin-top: -1.5rem; background: #fff; padding: 0.5rem; border-radius: 50px; box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                                                                    </div>
+                                                                <div style="height:9rem; margin-bottom: 0.5rem; display: flex; justify-content: center; width: 150px;">
+                                                                        <img src="assetsPlantillas/tv.png" style="width:80%, height:60%" alt="">
+                                                                </div>
+                                                                    <div style=" display: flex; flex-direction: column; justify-content: flex-start; width: 100%; margin-left: 1rem;">
+                                                                        <p style="margin:0;font-family: helvetica; font-size:12px;">Dell X4S- 16GBS/p>
+                                                                        <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">S/.156,39</p>
+                                                                    </div> 
+                                                                </div>
+
+                                                                <div style="height:12rem; flex-basis:calc(16% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75); margin-bottom: 1rem;
+                                                                width: 100%; display:flex; flex-direction: column;  align-items: center; padding: 1rem 0.5rem;  margin-right: 2.5rem;" class="tarjet"> 
+                                                                    <div style="width: 100%; display: flex; justify-content: flex-end;     margin-left: 3rem;">
+                                                                        <span class="iconify" style="    margin-top: -1.5rem; background: #fff; padding: 0.5rem; border-radius: 50px; box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                                                                    </div>
+                                                                <div style="height:9rem; margin-bottom: 0.5rem; display: flex; justify-content: center; width: 150px;">
+                                                                        <img src="assetsPlantillas/tv.png" style="width:80%, height:60%" alt="">
+                                                                </div>
+                                                                    <div style=" display: flex; flex-direction: column; justify-content: flex-start; width: 100%; margin-left: 1rem;">
+                                                                        <p style="margin:0;font-family: helvetica; font-size:12px;">Dell X4S- 16GBS/p>
+                                                                        <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">S/.156,39</p>
+                                                                    </div> 
+                                                                </div>
+
+                                                                <div style="height:12rem; flex-basis:calc(16% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75); margin-bottom: 1rem;
+                                                                width: 100%; display:flex; flex-direction: column;  align-items: center; padding: 1rem 0.5rem;  margin-right: 2.5rem;" class="tarjet"> 
+                                                                    <div style="width: 100%; display: flex; justify-content: flex-end;     margin-left: 3rem;">
+                                                                        <span class="iconify" style="    margin-top: -1.5rem; background: #fff; padding: 0.5rem; border-radius: 50px; box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                                                                    </div>
+                                                                <div style="height:9rem; margin-bottom: 0.5rem; display: flex; justify-content: center; width: 150px;">
+                                                                        <img src="assetsPlantillas/tv.png" style="width:80%, height:60%" alt="">
+                                                                </div>
+                                                                    <div style=" display: flex; flex-direction: column; justify-content: flex-start; width: 100%; margin-left: 1rem;">
+                                                                        <p style="margin:0;font-family: helvetica; font-size:12px;">Dell X4S- 16GBS/p>
+                                                                        <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">S/.156,39</p>
+                                                                    </div> 
+                                                                </div>
+
+                                                                <div style="height:12rem; flex-basis:calc(16% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75); margin-bottom: 1rem;
+                                                                width: 100%; display:flex; flex-direction: column;  align-items: center; padding: 1rem 0.5rem;  margin-right: 2.5rem;" class="tarjet"> 
+                                                                    <div style="width: 100%; display: flex; justify-content: flex-end;     margin-left: 3rem;">
+                                                                        <span class="iconify" style="    margin-top: -1.5rem; background: #fff; padding: 0.5rem; border-radius: 50px; box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                                                                    </div>
+                                                                <div style="height:9rem; margin-bottom: 0.5rem; display: flex; justify-content: center; width: 150px;">
+                                                                        <img src="assetsPlantillas/tv.png" style="width:80%, height:60%" alt="">
+                                                                </div>
+                                                                    <div style=" display: flex; flex-direction: column; justify-content: flex-start; width: 100%; margin-left: 1rem;">
+                                                                        <p style="margin:0;font-family: helvetica; font-size:12px;">Dell X4S- 16GBS/p>
+                                                                        <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">S/.156,39</p>
+                                                                    </div> 
+                                                                </div>
+
+                                                                <div style="height:12rem; flex-basis:calc(16% - 4rem); background: #fff; -webkit-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                -moz-box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75);
+                                                                box-shadow: 0px 9px 30px -17px rgba(0,0,0,0.75); margin-bottom: 1rem;
+                                                                width: 100%; display:flex; flex-direction: column;  align-items: center; padding: 1rem 0.5rem;  margin-right: 2.5rem;" class="tarjet"> 
+                                                                    <div style="width: 100%; display: flex; justify-content: flex-end;     margin-left: 3rem;">
+                                                                        <span class="iconify" style="    margin-top: -1.5rem; background: #fff; padding: 0.5rem; border-radius: 50px; box-shadow: rgba(0, 0, 0, 0.75) 0px 9px 30px -10px;"  data-icon="bi:plus" data-inline="false"></span>
+                                                                    </div>
+                                                                <div style="height:9rem; margin-bottom: 0.5rem; display: flex; justify-content: center; width: 150px;">
+                                                                        <img src="assetsPlantillas/tv.png" style="width:80%, height:60%" alt="">
+                                                                </div>
+                                                                    <div style=" display: flex; flex-direction: column; justify-content: flex-start; width: 100%; margin-left: 1rem;">
+                                                                        <p style="margin:0;font-family: helvetica; font-size:12px;">Dell X4S- 16GBS/p>
+                                                                        <p style="margin:0; font-weight: 700; font-size:12px; font-family: 'Work Sans', sans-serif;">S/.156,39</p>
                                                                     </div> 
                                                                 </div>
                                                                 
@@ -358,6 +652,9 @@
                                             
                                         }
                                         
+                                },
+                                acordeon(catalog){
+                                        
                                 }
                             },
                             created(){
@@ -375,6 +672,38 @@
         })
     </script>
  
+    <script>
+        
+$(function(){
+	var Accordion = function(el, multiple) {
+		this.el = el || {};
+		this.multiple = multiple || false;
+
+		// Variables
+		var link = this.el.find('.cambio');
+		// Eventos
+		link.on('click', {el: this.el},this.dropdown)
+	}
+
+	Accordion.prototype.dropdown = function(e) {
+		var $el = e.data.el;
+			$this = $(this),
+			$next = $this.next();
+
+		// Desencadena evento de apertura en los elementos siguientes a la clase link
+		$next.slideToggle();
+		// Agregar clase open a elemento padre del elemento con clase link = li
+		$this.parent().toggleClass('open');
+		
+		//Parametro inicial que permite ver 1 solo submenu abierto 
+		if(!e.data.multiple){
+			$el.find('.catalogo').not($next).slideUp().parent().removeClass('open');
+		}
+	}
+	// Elegir submenus multiples (true) submenus uno a la vez (false)
+	var accordion = new Accordion($('.mover'), false);
+});
+    </script>
         <script>
             var mover = document.getElementById('mover');
           const sort =  new Sortable(mover, {
